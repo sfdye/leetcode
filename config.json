@@ -1,0 +1,9 @@
+{
+  "autologin": {
+    "enable": true
+  },
+  "code": {
+    "lang": "python3",
+    "editor": "code"
+  }
+}
