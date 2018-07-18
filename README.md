@@ -1,23 +1,34 @@
 # My leetcode solutions
 
-## Workflow
+## Workflow Using [leetcode-cli](https://skygragon.github.io/leetcode-cli/)
 
-Using [leetcode-cli](https://skygragon.github.io/leetcode-cli/)
-
-### Random pick problem and generate the source file
-
+### Install leeetcode-cli
 ```bash
-$ leetcode show -q eL -g -l python3
+$ npm install -g leetcode-cli
 ```
 
-### Submit
+### Apply user config
+```bash
+$ ln -s leetcode/config.json ~/.lc/config.json
+```
+
+### Random pick problem
 
 ```bash
-$ leetcode submit ./two-sum.cpp
+# pick easy
+$ leetcode show -q eL
 
-  ✔ Accepted
-  ✔ 16/16 cases passed (12 ms)
-  ✔ Your runtime beats 49.89 % of cpp submissions
+# pick medium
+$ leetcode show -q mL
+
+# pick hard
+$ leetcode show -q hL
+```
+
+# Generate source file and open in editor
+
+```bash
+$ leetcode show [problem] -g -e
 ```
 
 ### Run tests
@@ -39,3 +50,15 @@ Expected
     ✔ answer: [0,2]
     ✔ output:
 ```
+
+### Submit
+
+```bash
+$ leetcode submit ./two-sum.cpp
+
+  ✔ Accepted
+  ✔ 16/16 cases passed (12 ms)
+  ✔ Your runtime beats 49.89 % of cpp submissions
+```
+
+
