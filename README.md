@@ -16,7 +16,7 @@ $ ln -s leetcode/config.json ~/.lc/config.json
 
 ```bash
 # pick easy
-$ leetcode show -q eL
+$ leetcode show -q eLD
 
 # pick medium
 $ leetcode show -q mL
