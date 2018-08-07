@@ -10,10 +10,11 @@ class Solution:
         while i >= 0 or j >= 0:
             x = int(num1[i]) if i >= 0 else 0
             y = int(num2[j]) if j >= 0 else 0
-            ans.append((x+y+carry) % 10)
+            ans.append((x + y + carry) % 10)
             carry = (x + y + carry) // 10
             i -= 1
             j -= 1
         if carry > 0:
             ans.append(carry)
         return "".join(map(str, ans[::-1]))
+
