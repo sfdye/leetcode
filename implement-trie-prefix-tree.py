@@ -1,10 +1,3 @@
-class TrieNode:
-
-    def __init__(self):
-        self.children = collections.defaultdict(TrieNode)
-        self.is_word = False
-
-
 class Trie:
 
     def __init__(self):
@@ -12,7 +5,7 @@ class Trie:
         Initialize your data structure here.
         """
 
-        self.root = TrieNode()
+        self.root = {}
 
     def insert(self, word):
         """
@@ -23,8 +16,8 @@ class Trie:
 
         node = self.root
         for c in word:
-            node = node.children[c]
-        node.is_word = True
+            node = node.setdefault(c, {})
+        node[None] = None
 
     def search(self, word):
         """
@@ -35,10 +28,10 @@ class Trie:
 
         node = self.root
         for c in word:
-            if c not in node.children:
+            if c not in node:
                 return False
-            node = node.children[c]
-        return node.is_word
+            node = node[c]
+        return None in node
 
     def startsWith(self, prefix):
         """
@@ -49,9 +42,9 @@ class Trie:
 
         node = self.root
         for c in prefix:
-            if c not in node.children:
+            if c not in node:
                 return False
-            node = node.children[c]
+            node = node[c]
         return True
 
 
