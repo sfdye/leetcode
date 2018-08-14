@@ -10,8 +10,16 @@ class Solution:
         """
 
         queue = deque([click])
-        directions = [(-1, 0), (-1, 1), (0, 1), (1, 1),
-                      (1, 0), (1, -1), (0, -1), (-1, -1)]
+        directions = [
+            (-1, 0),
+            (-1, 1),
+            (0, 1),
+            (1, 1),
+            (1, 0),
+            (1, -1),
+            (0, -1),
+            (-1, -1),
+        ]
         N = len(board)
         M = len(board[0])
         while queue:
@@ -25,10 +33,10 @@ class Solution:
             for direction in directions:
                 i, j = direction
                 if 0 <= x + i < N and 0 <= y + j < M:
-                    if board[x+i][y+j] == "M":
+                    if board[x + i][y + j] == "M":
                         adjacent_mine += 1
-                    elif board[x+i][y+j] == "E":
-                        adjacent.append([x+i, y+j])
+                    elif board[x + i][y + j] == "E":
+                        adjacent.append([x + i, y + j])
             if adjacent_mine == 0:
                 board[x][y] = "B"
                 for x in adjacent:

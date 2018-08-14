@@ -5,6 +5,6 @@ class Solution(object):
         :rtype: bool
         """
         x = num
-        while x**2 > num:
-            x = (x+num/x)/2
-        return x**2 == num
+        while x ** 2 > num:
+            x = (x + num / x) / 2
+        return x ** 2 == num

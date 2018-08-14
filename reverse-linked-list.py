@@ -9,7 +9,7 @@ class Solution(object):
             return head
 
         tmp = None
-        
+
         while head != None:
             node = ListNode(head.val)
             node.next = tmp

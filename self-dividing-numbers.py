@@ -15,7 +15,7 @@ class Solution:
             return True
 
         ans = []
-        for num in range(left, right+1):
+        for num in range(left, right + 1):
             if self_dividing(num):
                 ans.append(num)
         return ans

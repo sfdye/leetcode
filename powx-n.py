@@ -4,4 +4,3 @@ class Solution:
     # @return a float
     def pow(self, x, n):
         return x ** n
-        

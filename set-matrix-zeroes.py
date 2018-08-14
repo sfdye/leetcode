@@ -14,7 +14,7 @@ class Solution(object):
                     zeros_vertical.add(col_id)
 
         row_count = len(matrix)
-        if row_count == 0: 
+        if row_count == 0:
             return
         col_count = len(matrix[0])
 

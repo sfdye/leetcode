@@ -25,7 +25,7 @@ class Solution:
             if node.right:
                 hr, tr = inorder(node.right)
                 node.right = hr
-                hr.left = node 
+                hr.left = node
                 tail = tr
             head.left = tail
             tail.right = head

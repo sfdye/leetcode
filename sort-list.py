@@ -4,7 +4,7 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        
+
         l = []
         node = head
         while node:

@@ -8,4 +8,4 @@ class Solution(object):
         if s == "":
             return 0
         else:
-            return len(s[s.rfind(" ")+1:])
+            return len(s[s.rfind(" ") + 1 :])

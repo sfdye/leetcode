@@ -1,4 +1,6 @@
 from collections import defaultdict
+
+
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -10,7 +12,7 @@ class Solution(object):
         d = defaultdict(list)
         for i, num in enumerate(nums):
             d[num].append(i)
-            
+
         for i, num in enumerate(nums):
             diff = target - num
             if diff in d:

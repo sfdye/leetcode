@@ -10,13 +10,13 @@ class Solution(object):
         node = head
         while node:
             l.append(node)
-            size += 1 
+            size += 1
             node = node.next
 
         if n == size:
             return head.next
 
-        node = l[size-n-1]
+        node = l[size - n - 1]
         node.next = node.next.next
 
         return head

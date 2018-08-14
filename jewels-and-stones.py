@@ -5,5 +5,5 @@ class Solution:
         :type S: str
         :rtype: int
         """
-        
+
         return sum(map(S.count, J))

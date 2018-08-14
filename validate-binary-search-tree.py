@@ -18,6 +18,8 @@ class Solution:
                 return True
             if not (min_value < node.val < max_value):
                 return False
-            return validate(node.left, min_value, node.val) and validate(node.right, node.val, max_value)
+            return validate(node.left, min_value, node.val) and validate(
+                node.right, node.val, max_value
+            )
 
         return validate(root, -float("inf"), float("inf"))

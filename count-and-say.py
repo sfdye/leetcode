@@ -5,14 +5,14 @@ class Solution:
         :rtype: str
         """
 
-        s = '1'
-        for i in xrange(n-1):
+        s = "1"
+        for i in xrange(n - 1):
             l = len(s)
             j = 0
-            next_s = ''
-            while (j < l):
+            next_s = ""
+            while j < l:
                 count = 1
-                while (j < l-1 and s[j] == s[j+1]):
+                while j < l - 1 and s[j] == s[j + 1]:
                     j += 1
                     count += 1
 

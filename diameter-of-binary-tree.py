@@ -20,8 +20,8 @@ class Solution:
                 return 0
             left = dfs(node.left)
             right = dfs(node.right)
-            self.ans = max(self.ans, left+right+1)
-            return max(left, right)+1
+            self.ans = max(self.ans, left + right + 1)
+            return max(left, right) + 1
 
         dfs(root)
-        return self.ans-1
+        return self.ans - 1

@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
 
-        min_price = 2**31-1
+        min_price = 2 ** 31 - 1
         max_profit = 0
 
         for i in range(len(prices)):

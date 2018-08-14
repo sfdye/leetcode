@@ -18,10 +18,8 @@ class Solution(object):
                 return None
             mid = (lo + hi) // 2
             root = TreeNode(nums[mid])
-            root.left = dfs(lo, mid-1)
-            root.right = dfs(mid+1, hi)
+            root.left = dfs(lo, mid - 1)
+            root.right = dfs(mid + 1, hi)
             return root
 
-        return dfs(0, len(nums)-1)
-
-
+        return dfs(0, len(nums) - 1)

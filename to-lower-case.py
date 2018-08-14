@@ -4,11 +4,11 @@ class Solution:
         :type str: str
         :rtype: str
         """
-        
+
         ans = ""
-        
+
         for c in str:
-            if  "A" <= c <= "Z":
+            if "A" <= c <= "Z":
                 ans += chr(ord(c) - (ord("A") - ord("a")))
             else:
                 ans += c

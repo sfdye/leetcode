@@ -18,4 +18,3 @@ class Solution(object):
                 r[y] = x
 
         return True
-

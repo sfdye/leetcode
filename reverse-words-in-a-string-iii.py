@@ -4,4 +4,4 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        return ' '.join(x[::-1] for x in s.strip().split())
+        return " ".join(x[::-1] for x in s.strip().split())

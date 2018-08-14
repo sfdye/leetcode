@@ -1,4 +1,3 @@
-
 class Solution(object):
     def isBalanced(self, root):
         """
@@ -22,4 +21,4 @@ class Solution(object):
         if not balanced:
             return False, 0
 
-        return abs(leftHeight-rightHeight)<=1, max(leftHeight, rightHeight)+1
+        return abs(leftHeight - rightHeight) <= 1, max(leftHeight, rightHeight) + 1

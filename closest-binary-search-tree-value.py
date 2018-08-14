@@ -18,7 +18,7 @@ class Solution:
         while root:
             if root.val == target:
                 return root.val
-            if abs(root.val-target) < abs(self.ans-target):
+            if abs(root.val - target) < abs(self.ans - target):
                 self.ans = root.val
             if root.val < target:
                 root = root.right

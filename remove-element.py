@@ -9,4 +9,3 @@ class Solution(object):
             nums.remove(val)
 
         return len(nums)
-

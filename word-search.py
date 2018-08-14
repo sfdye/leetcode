@@ -17,8 +17,12 @@ class Solution:
             if i < 0 or i >= N or j < 0 or j >= M or board[i][j] != word[cur]:
                 return False
             board[i][j] = "#"
-            ret = dfs(i+1, j, word, board, cur+1) or dfs(i, j+1, word, board, cur +
-                                                         1) or dfs(i-1, j, word, board, cur+1) or dfs(i, j-1, word, board, cur+1)
+            ret = (
+                dfs(i + 1, j, word, board, cur + 1)
+                or dfs(i, j + 1, word, board, cur + 1)
+                or dfs(i - 1, j, word, board, cur + 1)
+                or dfs(i, j - 1, word, board, cur + 1)
+            )
             board[i][j] = word[cur]
             return ret
 

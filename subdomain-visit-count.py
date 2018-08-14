@@ -16,4 +16,3 @@ class Solution:
             for i in range(len(parts)):
                 counter[".".join([parts[i:]])] += int(count)
         return ["{} {}".format(v, k) for k, v in counter.items()]
- 

@@ -9,8 +9,7 @@ class Solution(object):
         else:
             ans = -int(str(x)[1:][::-1])
 
-        if abs(ans) > 2**31 -1:
+        if abs(ans) > 2 ** 31 - 1:
             return 0
         else:
             return ans
-

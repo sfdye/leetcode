@@ -9,8 +9,8 @@ class Solution:
         i = 0
         while i < len(nums):
             j = i
-            while j < len(nums) - 1 and nums[j+1] > nums[j]:
+            while j < len(nums) - 1 and nums[j + 1] > nums[j]:
                 j += 1
-            ans = max(ans, j-i+1)
+            ans = max(ans, j - i + 1)
             i = j + 1
         return ans

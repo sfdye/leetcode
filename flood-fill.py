@@ -23,7 +23,7 @@ class Solution:
                 return
             image[i][j] = newColor
             for k in [(-1, 0), (0, 1), (1, 0), (0, -1)]:
-                dfs(i+k[0], j+k[1])
+                dfs(i + k[0], j + k[1])
 
         dfs(sr, sc)
         return image

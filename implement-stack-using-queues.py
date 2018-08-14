@@ -10,14 +10,14 @@ class Stack(object):
         :type x: int
         :rtype: nothing
         """
-            
+
         self.nums.append(x)
 
     def pop(self):
         """
         :rtype: nothing
         """
-        
+
         del self.nums[-1]
 
     def top(self):
@@ -26,7 +26,6 @@ class Stack(object):
         """
 
         return self.nums[-1]
-        
 
     def empty(self):
         """

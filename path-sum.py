@@ -8,7 +8,7 @@ class Solution(object):
         if root == None:
             return False
         else:
-            return self.dfs(root, 0, sum)    
+            return self.dfs(root, 0, sum)
 
     def dfs(self, node, now, sum):
         if node == None:
@@ -19,4 +19,6 @@ class Solution(object):
             else:
                 return False
         else:
-            return self.dfs(node.left, now+node.val, sum) or self.dfs(node.right, now+node.val, sum)
+            return self.dfs(node.left, now + node.val, sum) or self.dfs(
+                node.right, now + node.val, sum
+            )

@@ -55,7 +55,7 @@ class Solution:
                 if x.isInteger():
                     ret += x.getInteger() * depth
                 else:
-                    ret += dfs(x.getList(), depth+1)
+                    ret += dfs(x.getList(), depth + 1)
             return ret
 
         return dfs(nestedList, 1)

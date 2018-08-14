@@ -15,7 +15,7 @@ class Solution:
                 inorder(node.right)
 
         inorder(root)
-        l, r = 0, len(self.nums)-1
+        l, r = 0, len(self.nums) - 1
         while l < r:
             if self.nums[l] + self.nums[r] == k:
                 return True

@@ -1,5 +1,4 @@
 class WordDictionary:
-
     def __init__(self):
         """
         Initialize your data structure here.
@@ -24,6 +23,7 @@ class WordDictionary:
         :type word: str
         :rtype: bool
         """
+
         def find(word, node):
             if not word:
                 return None in node
@@ -31,10 +31,11 @@ class WordDictionary:
                 if ch != ".":
                     return ch in node and find(word[1:], node[ch])
                 else:
-                    return any(find(word[1:], child) for child in node.values() if child)
+                    return any(
+                        find(word[1:], child) for child in node.values() if child
+                    )
 
         return find(word, self.root)
-
 
 
 # Your WordDictionary object will be instantiated and called as such:

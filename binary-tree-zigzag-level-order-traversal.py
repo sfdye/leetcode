@@ -5,6 +5,7 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
+
 class Solution(object):
     def dfs(self, root, depth):
 
@@ -16,9 +17,8 @@ class Solution(object):
             else:
                 ans[depth].append(root.val)
 
-            self.dfs(root.left, depth+1)
-            self.dfs(root.right, depth+1)
-
+            self.dfs(root.left, depth + 1)
+            self.dfs(root.right, depth + 1)
 
     def zigzagLevelOrder(self, root):
         """

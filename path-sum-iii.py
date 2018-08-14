@@ -10,7 +10,11 @@ class Solution(object):
     def dfs(self, node, target):
         if not node:
             return 0
-        return int(node.val == target) + self.dfs(node.left, target-node.val) + self.dfs(node.right, target-node.val)
+        return (
+            int(node.val == target)
+            + self.dfs(node.left, target - node.val)
+            + self.dfs(node.right, target - node.val)
+        )
 
     def pathSum(self, root, sum):
         """
@@ -21,4 +25,8 @@ class Solution(object):
 
         if not root:
             return 0
-        return self.dfs(root, sum) + self.pathSum(root.left, sum) + self.pathSum(root.right, sum)
+        return (
+            self.dfs(root, sum)
+            + self.pathSum(root.left, sum)
+            + self.pathSum(root.right, sum)
+        )

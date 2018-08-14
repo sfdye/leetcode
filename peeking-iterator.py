@@ -53,6 +53,7 @@ class PeekingIterator:
 
         return self.next_val is not None
 
+
 # Your PeekingIterator object will be instantiated and called as such:
 # iter = PeekingIterator(Iterator(nums))
 # while iter.hasNext():

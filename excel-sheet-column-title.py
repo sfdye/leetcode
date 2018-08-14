@@ -11,7 +11,7 @@ class Solution(object):
             if m == 0:
                 m = 26
                 n -= 26
-            ans = chr(ord('A')+m-1) + ans
+            ans = chr(ord("A") + m - 1) + ans
             n /= 26
 
         return ans

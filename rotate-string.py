@@ -6,4 +6,4 @@ class Solution:
         :rtype: bool
         """
 
-        return len(A) == len(B) and B in A+A
+        return len(A) == len(B) and B in A + A

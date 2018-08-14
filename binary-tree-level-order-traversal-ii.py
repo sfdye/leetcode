@@ -5,6 +5,7 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution(object):
     def dfs(self, root, depth):
 
@@ -16,15 +17,15 @@ class Solution(object):
             else:
                 ans[depth].append(root.val)
 
-            self.dfs(root.left, depth+1)
-            self.dfs(root.right, depth+1)
-            
+            self.dfs(root.left, depth + 1)
+            self.dfs(root.right, depth + 1)
+
     def levelOrderBottom(self, root):
         """
         :type root: TreeNode
         :rtype: List[List[int]]
         """
-        
+
         global ans
 
         ans = []
@@ -32,4 +33,3 @@ class Solution(object):
         self.dfs(root, 0)
 
         return ans[::-1]
-        

@@ -33,8 +33,8 @@ class Solution:
             for num in nums:
                 if num < 0:
                     ans.append(
-                        -minus * round(math.exp(sum_of_logs-math.log(abs(num)))))
+                        -minus * round(math.exp(sum_of_logs - math.log(abs(num))))
+                    )
                 else:
-                    ans.append(
-                        minus * round(math.exp(sum_of_logs-math.log(num))))
+                    ans.append(minus * round(math.exp(sum_of_logs - math.log(num))))
         return ans

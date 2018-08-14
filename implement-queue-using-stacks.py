@@ -1,12 +1,12 @@
 import collections
 
-class Queue(object):
 
+class Queue(object):
     def __init__(self):
         """
         initialize your data structure here.
         """
-        self.stack = collections.deque()    
+        self.stack = collections.deque()
 
     def push(self, x):
         """
@@ -19,7 +19,7 @@ class Queue(object):
         """
         :rtype: nothing
         """
-        
+
         self.stack.popleft()
 
     def peek(self):
@@ -28,7 +28,6 @@ class Queue(object):
         """
 
         return self.stack[0]
-        
 
     def empty(self):
         """

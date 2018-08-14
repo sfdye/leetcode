@@ -4,10 +4,10 @@ class Solution:
         :type height: List[int]
         :rtype: int
         """
-        
+
         if not height:
             return 0
-            
+
         max_value = max(height)
         max_index = height.index(max_value)
         total = max_value * len(height)

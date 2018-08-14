@@ -9,7 +9,7 @@ class Solution:
         :type banned: List[str]
         :rtype: str
         """
-        words = re.findall(r'\w+', paragraph.lower())
+        words = re.findall(r"\w+", paragraph.lower())
         counter = Counter(words)
         for word in banned:
             counter[word] = 0

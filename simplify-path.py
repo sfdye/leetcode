@@ -11,7 +11,7 @@ class Solution(object):
             if subdir == "" or subdir == ".":
                 continue
             elif subdir == "..":
-               if len(ans) > 0:
+                if len(ans) > 0:
                     del ans[-1]
             else:
                 ans.append(subdir)

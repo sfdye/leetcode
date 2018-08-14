@@ -25,4 +25,3 @@ class Solution(object):
             p1, p2 = p1.next, p2.next
 
         return p1 is None
-

@@ -7,7 +7,6 @@
 
 
 class Solution:
-
     def findSecondMinimumValue(self, root):
         """
         :type root: TreeNode
@@ -15,7 +14,7 @@ class Solution:
         """
 
         min1 = root.val
-        self.ans = float('inf')
+        self.ans = float("inf")
 
         def dfs(node):
             if not node:
@@ -27,4 +26,4 @@ class Solution:
                 dfs(node.right)
 
         dfs(root)
-        return self.ans if self.ans < float('inf') else -1
+        return self.ans if self.ans < float("inf") else -1

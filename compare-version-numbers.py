@@ -12,11 +12,11 @@ class Solution(object):
         lena = len(a)
         lenb = len(b)
         if lena > lenb:
-            b += [0] * (lena-lenb)
+            b += [0] * (lena - lenb)
         elif lena < lenb:
-            a += [0] * (lenb-lena)
+            a += [0] * (lenb - lena)
 
-        for i in range(min(len(a),len(b))):
+        for i in range(min(len(a), len(b))):
             if a[i] > b[i]:
                 return 1
             elif a[i] < b[i]:

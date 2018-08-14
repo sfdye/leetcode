@@ -15,5 +15,5 @@ class Solution:
             else:
                 break
 
-        num = nine // 9 + (n-1) // digit
-        return int(str(num)[(n-1) % digit])
+        num = nine // 9 + (n - 1) // digit
+        return int(str(num)[(n - 1) % digit])
