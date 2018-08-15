@@ -19,8 +19,10 @@ class Solution(object):
                 return True
             if not s or not t:
                 return False
-            return s.val == t.val and is_same(s.left, t.left) and is_same(s.right, t.right)
-            
+            return (
+                s.val == t.val and is_same(s.left, t.left) and is_same(s.right, t.right)
+            )
+
         if not s:
             return False
 

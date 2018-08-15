@@ -1,5 +1,4 @@
 class TwoSum(object):
-
     def __init__(self):
         """
         Initialize your data structure here.
@@ -29,7 +28,6 @@ class TwoSum(object):
             if value - k in self.nums and (value - k != k or self.nums[k] > 1):
                 return True
         return False
-        
 
 
 # Your TwoSum object will be instantiated and called as such:

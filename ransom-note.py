@@ -5,5 +5,5 @@ class Solution:
         :type magazine: str
         :rtype: bool
         """
-    
+
         return not collections.Counter(ransomNote) - collections.Counter(magazine)
