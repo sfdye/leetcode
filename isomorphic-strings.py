@@ -7,4 +7,3 @@ class Solution(object):
         """
 
         return len(set(s)) == len(set(t)) == len(set(zip(s, t)))
-
