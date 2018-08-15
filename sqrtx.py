@@ -8,11 +8,11 @@ class Solution(object):
         if x <= 1:
             return x
 
-        s = x/2
+        s = x / 2
 
-        while abs(s**2-x)>1e-6:
+        while abs(s ** 2 - x) > 1e-6:
 
-            s = 0.5*(s+x/s)
+            s = 0.5 * (s + x / s)
             print s
 
         return int(s)
