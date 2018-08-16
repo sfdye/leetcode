@@ -18,7 +18,7 @@ class Solution:
                 max_i = nums.index(max(nums))
                 node = TreeNode(nums[max_i])
                 node.left = build(nums[:max_i])
-                node.right = build(nums[max_i+1:])
+                node.right = build(nums[max_i + 1 :])
                 return node
 
         return build(nums)
