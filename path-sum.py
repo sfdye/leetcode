@@ -19,6 +19,4 @@ class Solution(object):
             else:
                 return False
         else:
-            return self.dfs(node.left, now + node.val, sum) or self.dfs(
-                node.right, now + node.val, sum
-            )
+            return self.dfs(node.left, now + node.val, sum) or self.dfs(node.right, now + node.val, sum)

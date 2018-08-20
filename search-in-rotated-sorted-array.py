@@ -11,11 +11,7 @@ class Solution(object):
             mid = (lo + hi) // 2
             if nums[mid] == target:
                 return mid
-            if (
-                nums[0] <= target < nums[mid]
-                or target < nums[mid] < nums[0]
-                or nums[mid] < nums[0] <= target
-            ):
+            if nums[0] <= target < nums[mid] or target < nums[mid] < nums[0] or nums[mid] < nums[0] <= target:
                 hi = mid - 1
             else:
                 lo = mid + 1

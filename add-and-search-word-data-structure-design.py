@@ -31,9 +31,7 @@ class WordDictionary:
                 if ch != ".":
                     return ch in node and find(word[1:], node[ch])
                 else:
-                    return any(
-                        find(word[1:], child) for child in node.values() if child
-                    )
+                    return any(find(word[1:], child) for child in node.values() if child)
 
         return find(word, self.root)
 

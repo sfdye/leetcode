@@ -10,16 +10,7 @@ class Solution:
         """
 
         queue = deque([click])
-        directions = [
-            (-1, 0),
-            (-1, 1),
-            (0, 1),
-            (1, 1),
-            (1, 0),
-            (1, -1),
-            (0, -1),
-            (-1, -1),
-        ]
+        directions = [(-1, 0), (-1, 1), (0, 1), (1, 1), (1, 0), (1, -1), (0, -1), (-1, -1)]
         N = len(board)
         M = len(board[0])
         while queue:

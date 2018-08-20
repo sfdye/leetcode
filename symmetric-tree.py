@@ -20,8 +20,4 @@ class Solution(object):
         elif t1 == None or t2 == None:
             return False
         else:
-            return (
-                t1.val == t2.val
-                and self.is_mirror(t1.left, t2.right)
-                and self.is_mirror(t1.right, t2.left)
-            )
+            return t1.val == t2.val and self.is_mirror(t1.left, t2.right) and self.is_mirror(t1.right, t2.left)

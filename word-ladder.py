@@ -11,7 +11,7 @@ class Solution:
             d = collections.defaultdict(list)
             for word in wordList:
                 for i in range(len(word)):
-                s = word[:i] + "_" + word[i+1:]
+                    s = word[:i] + "_" + word[i + 1 :]
                 d[s].append(word)
             return d
 
@@ -24,9 +24,9 @@ class Solution:
             if cur == endWord:
                 return step
             for i in range(len(word)):
-                s = word[:i] + "_" + word[i+1]
+                s = word[:i] + "_" + word[i + 1]
                 for neigh in d[s]:
                     if neigh not in visited:
-                        queue.append((neigh, step+1))
+                        queue.append((neigh, step + 1))
 
         return 0
