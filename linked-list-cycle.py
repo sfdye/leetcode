@@ -4,11 +4,10 @@ class Solution(object):
         :type head: ListNode
         :rtype: bool
         """
-        d = {}
-        node = head
-        while node != None:
-            if node in d:
+        fast = slow = head
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+            if fast == slow:
                 return True
-            d[node] = 1
-            node = node.next
         return False
