@@ -11,4 +11,3 @@ class Solution:
             count += z & 1
             z >>= 1
         return count
-            
