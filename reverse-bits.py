@@ -1,7 +1,10 @@
-class Solution(object):
+class Solution:
+    # @param n, an integer
+    # @return an integer
     def reverseBits(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
-        return int("{0:{fill}32b}".format(n, fill="0")[::-1], 2)
+        ans = 0
+        for _ in range(32):
+            ans <<= 1
+            ans |= n & 1
+            n >>= 1
+        return ans
