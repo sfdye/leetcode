@@ -13,16 +13,16 @@ class Solution:
         :rtype: List[TreeNode]
         """
 
-        def dfs(N):
+        def build(N):
             if N == 1:
                 yield TreeNode(0)
             else:
                 for i in range(1, N, 2):
-                    for left in dfs(i):
-                        for right in dfs(N - i - 1):
+                    for left in build(i):
+                        for right in build(N - i - 1):
                             root = TreeNode(0)
                             root.left = left
                             root.right = right
                             yield root
 
-        return list(dfs(N))
+        return list(build(N))
