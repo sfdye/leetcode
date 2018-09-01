@@ -7,11 +7,11 @@ class Solution:
 
         ans = ""
 
-        def expand(i, j):
-            while i >= 0 and j < len(s) and s[i] == s[j]:
-                i -= 1
-                j += 1
-            return s[i + 1 : j]
+        def expand(l, r):
+            while l >= 0 and r < len(s) and s[l] == s[r]:
+                l -= 1
+                r += 1
+            return s[l + 1 : r]
 
         for i in range(len(s)):
             cur = expand(i, i)
