@@ -4,7 +4,6 @@ class Solution:
         :type s: str
         :rtype: str
         """
-
         ans = ""
 
         def expand(l, r):
