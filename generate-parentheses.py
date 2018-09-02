@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution:
     def generateParenthesis(self, n):
         """
         :type n: int
@@ -6,14 +6,14 @@ class Solution(object):
         """
         ans = []
 
-        def dfs(s, left, right):
-            if len(s) == n * 2:
-                ans.append(s)
-            else:
-                if left < n:
-                    dfs(s + "(", left + 1, right)
-                if right < left:
-                    dfs(s + ")", left, right + 1)
+        def construct(left, right, cur):
+            if left + right == n * 2:
+                ans.append(cur)
+                return
+            if left < n:
+                construct(left + 1, right, cur + "(")
+            if right < left:
+                construct(left, right + 1, cur + ")")
 
-        dfs("", 0, 0)
+        construct(0, 0, "")
         return ans
