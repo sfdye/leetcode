@@ -1,11 +1,13 @@
-class Solution(object):
+class Solution:
     def removeElement(self, nums, val):
         """
         :type nums: List[int]
         :type val: int
         :rtype: int
         """
-        for i in range(nums.count(val)):
-            nums.remove(val)
-
-        return len(nums)
+        slow = 0
+        for fast in range(len(nums)):
+            if nums[fast] != val:
+                nums[slow] = nums[fast]
+                slow += 1
+        return slow
