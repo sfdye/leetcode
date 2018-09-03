@@ -8,16 +8,16 @@ class Solution:
         ans = []
         candidates.sort()
 
-        def dfs(target, arr):
+        def dfs(cur, target):
             if target < 0:
                 return
             if target == 0:
-                ans.append(arr)
+                ans.append(cur)
             for num in candidates:
                 if num > target:
                     break
-                if len(arr) == 0 or arr[-1] <= num:
-                    dfs(target - num, arr + [num])
+                if not cur or cur[-1] <= num:
+                    dfs(cur + [num], target - num)
 
-        dfs(target, [])
+        dfs([], target)
         return ans
