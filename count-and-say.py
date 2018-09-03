@@ -4,21 +4,14 @@ class Solution:
         :type n: int
         :rtype: str
         """
-
         s = "1"
-        for i in xrange(n - 1):
-            l = len(s)
-            j = 0
+        for _ in range(n - 1):
+            i = 0
+            s += "#"
             next_s = ""
-            while j < l:
-                count = 1
-                while j < l - 1 and s[j] == s[j + 1]:
-                    j += 1
-                    count += 1
-
-                next_s += str(count) + s[j]
-                j += 1
-
+            for j in range(1, len(s)):
+                if s[j] != s[j - 1]:
+                    next_s += str(j - i) + s[j - 1]
+                    i = j
             s = next_s
-
         return s
