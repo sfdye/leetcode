@@ -4,9 +4,7 @@ class Solution:
         :type strs: List[str]
         :rtype: List[List[str]]
         """
-
-        ans = collections.defaultdict(list)
-        for s in strs:
-            ans["".join(sorted(s))].append(s)
-
-        return list(ans.values())
+        d = collections.defaultdict(list)
+        for str in strs:
+            d[tuple(sorted(str))].append(str)
+        return list(d.values())
