@@ -4,10 +4,9 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
-
-        dp = [0] * len(nums)
-        max_sum = dp[0] = nums[0]
+        dp = [nums[0]]
+        ans = nums[0]
         for i in range(1, len(nums)):
-            dp[i] = nums[i] + max(dp[i - 1], 0)
-            max_sum = max(max_sum, dp[i])
-        return max_sum
+            dp.append(nums[i] + max(0, dp[-1]))
+            ans = max(ans, dp[-1])
+        return ans
