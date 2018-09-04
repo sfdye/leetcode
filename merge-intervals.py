@@ -11,26 +11,16 @@ class Solution:
         :type intervals: List[Interval]
         :rtype: List[Interval]
         """
-
         if not intervals:
             return []
-
-        intervals = sorted(intervals, key=lambda x: x.start)
-
-        start = intervals[0].start
-        end = intervals[0].end
-        result = []
-
+        intervals.sort(key=lambda x: x.start)
+        ans = []
+        start, end = intervals[0].start, intervals[0].end
         for i in range(1, len(intervals)):
-            # not merging
-            if intervals[i].start > end:
-                result.append(Interval(start, end))
-                start = intervals[i].start
-                end = intervals[i].end
-            # merge
-            else:
+            if intervals[i].start <= end:
                 end = max(end, intervals[i].end)
-
-        result.append(Interval(start, end))
-
-        return result
+            else:
+                ans.append([start, end])
+                start, end = intervals[i].start, intervals[i].end
+        ans.append([start, end])
+        return ans
