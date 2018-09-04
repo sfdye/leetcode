@@ -1,4 +1,11 @@
-class Solution(object):
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+
+class Solution:
     def rotateRight(self, head, k):
         """
         :type head: ListNode
@@ -7,23 +14,14 @@ class Solution(object):
         """
         if not head:
             return None
-
-        p = head
-        length = 0
-        while p:
-            length += 1
-            p = p.next
-
-        slow = fast = head
-        for i in range(k % length):
-            fast = fast.next
-
-        while fast and fast.next:
-            slow = slow.next
-            fast = fast.next
-
-        fast.next = head
-        head = slow.next
-        slow.next = None
-
+        node = head
+        l = 1
+        while node.next:
+            node = node.next
+            l += 1
+        node.next = head
+        for _ in range(l - k % l):
+            node = node.next
+        head = node.next
+        node.next = None
         return head
