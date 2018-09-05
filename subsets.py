@@ -1,11 +1,10 @@
-class Solution(object):
+class Solution:
     def subsets(self, nums):
         """
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-
         ans = [[]]
-        for i in range(len(nums)):
-            ans.append([item + [nums[i]] for item in ans])
+        for num in nums:
+            ans += [item + [num] for item in ans]
         return ans
