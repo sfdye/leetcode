@@ -1,19 +1,16 @@
-class Solution(object):
+class Solution:
     def simplifyPath(self, path):
         """
         :type path: str
         :rtype: str
         """
-
-        subdirs = path.split("/")
-        ans = []
-        for subdir in subdirs:
-            if subdir == "" or subdir == ".":
+        stack = []
+        for x in path.split("/"):
+            if x == "" or x == ".":
                 continue
-            elif subdir == "..":
-                if len(ans) > 0:
-                    del ans[-1]
+            elif x == "..":
+                if stack:
+                    stack.pop()
             else:
-                ans.append(subdir)
-
-        return "/" + "/".join(ans)
+                stack.append(x)
+        return "/" + "/".join(stack)
