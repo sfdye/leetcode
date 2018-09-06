@@ -12,10 +12,7 @@ class Solution:
         :type root: TreeNode
         :rtype: List[int]
         """
-
-        ans = []
-        stack = []
-        cur = root
+        cur, stack, ans = root, [], []
         while cur or stack:
             while cur:
                 stack.append(cur)
