@@ -12,12 +12,14 @@ class Solution:
         :type root: TreeNode
         :rtype: bool
         """
-
-        def validate(node, min_value, max_value):
-            if not node:
-                return True
-            if not (min_value < node.val < max_value):
+        stack, cur, last = [], root, None
+        while stack or cur:
+            while cur:
+                stack.append(cur)
+                cur = cur.left
+            cur = stack.pop()
+            if last and cur.val <= last.val:
                 return False
-            return validate(node.left, min_value, node.val) and validate(node.right, node.val, max_value)
-
-        return validate(root, -float("inf"), float("inf"))
+            last = cur
+            cur = cur.right
+        return True
