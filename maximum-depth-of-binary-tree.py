@@ -1,22 +1,18 @@
-class Solution(object):
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+
+class Solution:
     def maxDepth(self, root):
         """
         :type root: TreeNode
         :rtype: int
         """
-        global maxdep
-        maxdep = 0
-
-        self.dfs(root, 1)
-
-        return maxdep
-
-    def dfs(self, node, dep):
-        global maxdep
-
-        if not node:
-            maxdep = max(maxdep, dep - 1)
-            return
+        if not root:
+            return 0
         else:
-            self.dfs(node.left, dep + 1)
-            self.dfs(node.right, dep + 1)
+            return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
