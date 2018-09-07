@@ -13,14 +13,13 @@ class Solution:
         :type k: int
         :rtype: int
         """
-
-        def dfs(root):
-            if root:
-                yield from dfs(root.left)
-                yield root
-                yield from dfs(root.right)
-
-        for node in dfs(root):
+        stack, cur = [], root
+        while stack or cur:
+            while cur:
+                stack.append(cur)
+                cur = cur.left
+            cur = stack.pop()
             k -= 1
             if k == 0:
-                return node.val
+                return cur.val
+            cur = cur.right
