@@ -17,8 +17,9 @@ class Solution:
         def check(p, q):
             if not p and not q:
                 return True
-            if (p == None) ^ (q == None):
+            elif (not p) ^ (not q):
                 return False
-            return p.val == q.val and check(p.left, q.left) and check(p.right, q.right)
+            else:
+                return p.val == q.val and check(p.left, q.left) and check(p.right, q.right)
 
         return check(p, q)
