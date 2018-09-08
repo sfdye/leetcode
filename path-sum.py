@@ -1,22 +1,22 @@
-class Solution(object):
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+
+class Solution:
     def hasPathSum(self, root, sum):
         """
         :type root: TreeNode
         :type sum: int
         :rtype: bool
         """
-        if root == None:
+        if not root:
             return False
+        if not root.left and not root.right and sum == root.val:
+            return True
         else:
-            return self.dfs(root, 0, sum)
-
-    def dfs(self, node, now, sum):
-        if node == None:
-            return False
-        if node.left == None and node.right == None:
-            if now + node.val == sum:
-                return True
-            else:
-                return False
-        else:
-            return self.dfs(node.left, now + node.val, sum) or self.dfs(node.right, now + node.val, sum)
+            sum -= root.val
+            return self.hasPathSum(root.left, sum) or self.hasPathSum(root.right, sum)
