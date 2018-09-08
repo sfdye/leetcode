@@ -12,13 +12,14 @@ class Solution:
         :type root: TreeNode
         :rtype: bool
         """
-        return (
-            abs(self.height(root.left) - self.height(root.right)) <= 1
-            and self.isBalanced(root.left)
-            and self.isBalanced(root.right)
-            if root
-            else True
-        )
+        if not root:
+            return True
+        else:
+            return (
+                abs(self.depth(root.left) - self.depth(root.right)) <= 1
+                and self.isBalanced(root.left)
+                and self.isBalanced(root.right)
+            )
 
-    def height(self, node):
-        return 1 + max(self.height(node.left), self.height(node.right)) if node else 0
+    def depth(self, node):
+        return 1 + max(self.depth(node.left), self.depth(node.right)) if node else 0
