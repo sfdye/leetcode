@@ -7,4 +7,4 @@ class Solution:
         :type nums: List[int]
         :rtype: int
         """
-        return functools.reduce(operator.xor, nums, 0)
+        return functools.reduce(operator.xor, nums)
