@@ -12,17 +12,14 @@ class Solution:
         :type root: TreeNode
         :rtype: List[int]
         """
-
         if not root:
             return []
-
-        ans = []
-        stack = [root]
+        stack, ans = [root], []
         while stack:
-            cur = stack.pop()
-            ans.append(cur.val)
-            if cur.right:
-                stack.append(cur.right)
-            if cur.left:
-                stack.append(cur.left)
+            node = stack.pop()
+            ans.append(node.val)
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
         return ans
