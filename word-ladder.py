@@ -6,27 +6,16 @@ class Solution:
         :type wordList: List[str]
         :rtype: int
         """
-
-        def construct_dict(wordList):
-            d = collections.defaultdict(list)
-            for word in wordList:
-                for i in range(len(word)):
-                    s = word[:i] + "_" + word[i + 1 :]
-                d[s].append(word)
-            return d
-
-        queue = collections.deque([(beginWord, 1)])
-        d = construct_dict(wordList)
-        visited = set()
+        wordList = set(wordList)
+        queue = collections.deque([[beginWord, 1]])
         while queue:
-            cur, step = queue.popleft()
-            visited.add(cur)
-            if cur == endWord:
-                return step
+            word, dist = queue.popleft()
+            if word == endWord:
+                return dist
             for i in range(len(word)):
-                s = word[:i] + "_" + word[i + 1]
-                for neigh in d[s]:
-                    if neigh not in visited:
-                        queue.append((neigh, step + 1))
-
+                for c in string.ascii_lowercase:
+                    next_word = word[:i] + c + word[i + 1 :]
+                    if next_word in wordList:
+                        wordList.remove(next_word)
+                        queue.append([next_word, dist + 1])
         return 0
