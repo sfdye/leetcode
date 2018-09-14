@@ -11,3 +11,4 @@ class Solution:
                 return [d[target - num], idx]
             else:
                 d[num] = idx
+
