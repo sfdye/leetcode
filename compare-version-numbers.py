@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution:
     def compareVersion(self, version1, version2):
         """
         :type version1: str
@@ -6,20 +6,10 @@ class Solution(object):
         :rtype: int
         """
 
-        a = map(int, version1.split("."))
-        b = map(int, version2.split("."))
+        nums1 = list(map(int, version1.split(".")))
+        nums2 = list(map(int, version2.split(".")))
 
-        lena = len(a)
-        lenb = len(b)
-        if lena > lenb:
-            b += [0] * (lena - lenb)
-        elif lena < lenb:
-            a += [0] * (lenb - lena)
-
-        for i in range(min(len(a), len(b))):
-            if a[i] > b[i]:
-                return 1
-            elif a[i] < b[i]:
-                return -1
-
+        for x, y in itertools.zip_longest(nums1, nums2, fillvalue=0):
+            if x != y:
+                return [-1, 1][x > y]
         return 0
