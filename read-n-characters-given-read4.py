@@ -11,10 +11,8 @@ class Solution(object):
         :type n: Maximum number of characters to read (int)
         :rtype: The number of characters read (int)
         """
-
-        buf4 = [""] * 4
         count = 0
-
+        buf4 = [""] * 4
         while n > 0:
             now = min(n, read4(buf4))
             if now == 0:
@@ -23,3 +21,4 @@ class Solution(object):
             count += now
             n -= now
         return count
+
