@@ -11,9 +11,10 @@ class Solution(object):
         :type head1, head1: ListNode
         :rtype: ListNode
         """
-
         p, q = headA, headB
-        while p is not q:
+        while p != q:
             p = p.next if p else headB
             q = q.next if q else headA
+
         return p
+
