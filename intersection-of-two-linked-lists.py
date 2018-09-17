@@ -17,4 +17,3 @@ class Solution(object):
             q = q.next if q else headA
 
         return p
-

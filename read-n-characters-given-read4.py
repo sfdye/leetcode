@@ -21,4 +21,3 @@ class Solution(object):
             count += now
             n -= now
         return count
-
