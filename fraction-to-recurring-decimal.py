@@ -1,4 +1,4 @@
-class Solution(object):
+class Solution:
     def fractionToDecimal(self, numerator, denominator):
         """
         :type numerator: int
@@ -17,3 +17,4 @@ class Solution(object):
         ans.insert(idx + 2, "(")
         ans.append(")")
         return "".join(ans).replace("(0)", "").rstrip(".")
+
