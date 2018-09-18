@@ -1,19 +1,18 @@
-class Solution(object):
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+
+class Solution:
     def reverseList(self, head):
         """
         :type head: ListNode
         :rtype: ListNode
         """
-
-        if head == None:
-            return head
-
-        tmp = None
-
-        while head != None:
-            node = ListNode(head.val)
-            node.next = tmp
-            tmp = node
-            head = head.next
-
-        return tmp
+        prev, cur = None, head
+        while cur:
+            p = cur.next
+            cur.next, prev, cur = prev, cur, p
+        return prev
