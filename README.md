@@ -2,6 +2,13 @@
 
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 
+## Features
+
+- Easy to understand and self-documenting 
+- Pythonic (not translating from another language like Java/C++)
+- Elegant (take advantage of Python standard libraries where possible)
+- Efficient (most solutions beat 80% Python submissions)
+- Unittests (good to have for interviews)
 
 ## Workflow using [leetcode-cli](https://skygragon.github.io/leetcode-cli/)
 
