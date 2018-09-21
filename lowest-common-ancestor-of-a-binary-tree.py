@@ -14,8 +14,9 @@ class Solution:
         :type q: TreeNode
         :rtype: TreeNode
         """
-        if root in (None, p, q):
+        if not root or root == p or root == q:
             return root
         else:
-            left, right = (self.lowestCommonAncestor(child, p, q) for child in (root.left, root.right))
+            left = self.lowestCommonAncestor(root.left, p, q)
+            right = self.lowestCommonAncestor(root.right, p, q)
             return root if left and right else left or right
