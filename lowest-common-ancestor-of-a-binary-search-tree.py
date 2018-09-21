@@ -14,11 +14,10 @@ class Solution:
         :type q: TreeNode
         :rtype: TreeNode
         """
-
-        while root:
-            if p.val < root.val > q.val:
-                root = root.left
-            elif p.val > root.val < q.val:
-                root = root.right
+        if root:
+            if root.val > max(p.val, q.val):
+                return self.lowestCommonAncestor(root.left, p, q)
+            elif root.val < min(p.val, q.val):
+                return self.lowestCommonAncestor(root.right, p, q)
             else:
                 return root
