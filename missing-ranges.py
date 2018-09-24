@@ -16,4 +16,3 @@ class Solution:
                 ans.append("{}->{}".format(prev + 1, num - 1))
             prev = num
         return ans
-

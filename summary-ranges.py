@@ -16,4 +16,3 @@ class Solution:
                 ans.append("{}->{}".format(nums[i], nums[j]))
             i = j + 1
         return ans
-

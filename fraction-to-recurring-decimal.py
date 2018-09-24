@@ -17,4 +17,3 @@ class Solution:
         ans.insert(idx + 2, "(")
         ans.append(")")
         return "".join(ans).replace("(0)", "").rstrip(".")
-

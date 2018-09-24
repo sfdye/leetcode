@@ -16,4 +16,3 @@ class Solution:
                         write += 1
                 anchor = read + 1
         return write
-

@@ -14,4 +14,3 @@ class Solution:
                 count += d[cur_sum - k]
             d[cur_sum] += 1
         return count
-

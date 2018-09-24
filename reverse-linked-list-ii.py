@@ -19,4 +19,3 @@ class Solution:
         p.next.next = cur
         p.next = pre
         return dummy.next
-

@@ -22,4 +22,3 @@ class Solution:
             if node:
                 heapq.heappush(h, (node.val, idx))
         return head.next
-

@@ -14,4 +14,3 @@ class Solution:
                 if not obstacleGrid[i - 1][j - 1]:
                     dp[i][j] = dp[i - 1][j] + dp[i][j - 1]
         return dp[-1][-1]
-

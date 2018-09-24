@@ -21,4 +21,3 @@ class Solution:
                 prev = head
             head = head.next
         return dummy.next
-

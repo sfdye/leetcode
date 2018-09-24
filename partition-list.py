@@ -25,4 +25,3 @@ class Solution:
         l2.next = None
         l1.next = h2.next
         return h1.next
-
