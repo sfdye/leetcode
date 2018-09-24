@@ -1,36 +1,50 @@
-import collections
+class MyQueue:
 
-
-class Queue(object):
     def __init__(self):
         """
-        initialize your data structure here.
+        Initialize your data structure here.
         """
-        self.stack = collections.deque()
+        self.s1 = []
+        self.s2 = []
 
     def push(self, x):
         """
+        Push element x to the back of queue.
         :type x: int
-        :rtype: nothing
+        :rtype: void
         """
-        self.stack.append(x)
+        while self.s1:
+            self.s2.append(self.s1.pop())
+        self.s1.append(x)
+        while self.s2:
+            self.s1.append(self.s2.pop())
+            
 
     def pop(self):
         """
-        :rtype: nothing
+        Removes the element from in front of queue and returns that element.
+        :rtype: int
         """
-
-        self.stack.popleft()
+        return self.s1.pop()
 
     def peek(self):
         """
+        Get the front element.
         :rtype: int
         """
-
-        return self.stack[0]
+        return self.s1[-1]
 
     def empty(self):
         """
+        Returns whether the queue is empty.
         :rtype: bool
         """
-        return len(self.stack) == 0
+        return not self.s1
+
+
+# Your MyQueue object will be instantiated and called as such:
+# obj = MyQueue()
+# obj.push(x)
+# param_2 = obj.pop()
+# param_3 = obj.peek()
+# param_4 = obj.empty()
