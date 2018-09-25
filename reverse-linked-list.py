@@ -11,8 +11,11 @@ class Solution:
         :type head: ListNode
         :rtype: ListNode
         """
-        prev, cur = None, head
-        while cur:
-            p = cur.next
-            cur.next, prev, cur = prev, cur, p
-        return prev
+        pre = None
+        while head:
+            cur = head
+            head = head.next
+            cur.next = pre
+            pre = cur
+        return pre
+
