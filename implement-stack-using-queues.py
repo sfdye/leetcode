@@ -1,5 +1,4 @@
 class MyStack:
-
     def __init__(self):
         """
         Initialize your data structure here.
@@ -13,7 +12,7 @@ class MyStack:
         :rtype: void
         """
         self.q.append(x)
-        for _ in range(len(self.q)-1):
+        for _ in range(len(self.q) - 1):
             self.q.append(self.q.popleft())
 
     def pop(self):
@@ -22,7 +21,7 @@ class MyStack:
         :rtype: int
         """
         return self.q.popleft()
-        
+
     def top(self):
         """
         Get the top element.
@@ -36,7 +35,6 @@ class MyStack:
         :rtype: bool
         """
         return not self.q
-        
 
 
 # Your MyStack object will be instantiated and called as such:

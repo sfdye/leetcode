@@ -1,5 +1,4 @@
 class MyQueue:
-
     def __init__(self):
         """
         Initialize your data structure here.
@@ -18,7 +17,6 @@ class MyQueue:
         self.s1.append(x)
         while self.s2:
             self.s1.append(self.s2.pop())
-            
 
     def pop(self):
         """
