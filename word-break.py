@@ -5,9 +5,9 @@ class Solution:
         :type wordDict: List[str]
         :rtype: bool
         """
-
-        ok = [True]
-        words = set(wordDict)
+        wordDict = set(wordDict)
+        dp = [False for _ in range(len(s) + 1)]
+        dp[0] = True
         for i in range(1, len(s) + 1):
-            ok += (any(ok[j] and s[j:i] in words for j in range(i)),)
-        return ok[-1]
+            dp[i] = any(dp[j] and s[j:i] in wordDict for j in range(i))
+        return dp[-1]
