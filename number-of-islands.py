@@ -8,19 +8,24 @@ class Solution:
             return 0
 
         count = 0
-        r, c = len(grid), len(grid[0])
+        rows, cols = len(grid), len(grid[0])
 
-        def dfs(i, j):
-            if i < 0 or i >= r or j < 0 or j >= c or grid[i][j] == "0":
-                return
-            grid[i][j] = "0"
-            for d in ((-1, 0), (0, 1), (1, 0), (0, -1)):
-                dfs(i + d[0], j + d[1])
+        def bfs(r, c):
+            queue = collections.deque()
+            queue.append((r, c))
+            grid[r][c] = "0"
+            while queue:
+                r, c = queue.popleft()
+                for d in ((-1, 0), (0, 1), (1, 0), (0, -1)):
+                    nr, nc = r + d[0], c + d[1]
+                    if 0 <= nr < rows and 0 <= nc < cols and grid[nr][nc] == "1":
+                        queue.append((nr, nc))
+                        grid[nr][nc] = "0"
 
-        for i in range(r):
-            for j in range(c):
+        for i in range(rows):
+            for j in range(cols):
                 if grid[i][j] == "1":
-                    dfs(i, j)
+                    bfs(i, j)
                     count += 1
         return count
 
