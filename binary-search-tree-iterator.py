@@ -11,27 +11,25 @@ class BSTIterator(object):
         """
         :type root: TreeNode
         """
-
         self.stack = []
-        self.push_all(root)
+        self._push_left(root)
 
     def hasNext(self):
         """
         :rtype: bool
         """
-
         return self.stack
 
     def next(self):
         """
         :rtype: int
         """
-
         node = self.stack.pop()
-        self.push_all(node.right)
+        if node.right:
+            self._push_left(node.right)
         return node.val
 
-    def push_all(self, node):
+    def _push_left(self, node):
         while node:
             self.stack.append(node)
             node = node.left
