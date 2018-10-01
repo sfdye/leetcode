@@ -24,7 +24,4 @@ class Solution(object):
         if not s:
             return False
 
-        if is_same(s, t):
-            return True
-
-        return self.isSubtree(s.left, t) or self.isSubtree(s.right, t)
+        return is_same(s, t) or self.isSubtree(s.left, t) or self.isSubtree(s.right, t)
