@@ -1,26 +1,31 @@
 # Definition for a binary tree node.
-# class TreeNode(object):
+# class TreeNode:
 #     def __init__(self, x):
 #         self.val = x
 #         self.left = None
 #         self.right = None
 
 
-class Solution(object):
-    def dfs(self, node, target):
-        if not node:
-            return 0
-        return (
-            int(node.val == target) + self.dfs(node.left, target - node.val) + self.dfs(node.right, target - node.val)
-        )
-
-    def pathSum(self, root, sum):
+class Solution:
+    def pathSum(self, root, target):
         """
         :type root: TreeNode
         :type sum: int
         :rtype: int
         """
+        self.ans = 0
+        cache = collections.defaultdict(int)
+        cache[0] = 1
 
-        if not root:
-            return 0
-        return self.dfs(root, sum) + self.pathSum(root.left, sum) + self.pathSum(root.right, sum)
+        def dfs(root, cur_sum):
+            if not root:
+                return
+            cur_sum += root.val
+            self.ans += cache[cur_sum - target]
+            cache[cur_sum] += 1
+            dfs(root.left, cur_sum)
+            dfs(root.right, cur_sum)
+            cache[cur_sum] -= 1
+
+        dfs(root, 0)
+        return self.ans
