@@ -18,4 +18,3 @@ class Solution:
             cur.next = pre
             pre = cur
         return pre
-

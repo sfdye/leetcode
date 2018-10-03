@@ -31,4 +31,3 @@ class Solution:
             return find_kth(nums1, nums2, l // 2)
         else:
             return (find_kth(nums1, nums2, l // 2 - 1) + find_kth(nums1, nums2, l // 2)) / 2
-

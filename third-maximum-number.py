@@ -13,4 +13,3 @@ class Solution:
             elif m3 < num < m2:
                 m3 = num
         return m3 if m3 > -float("inf") else m1
-

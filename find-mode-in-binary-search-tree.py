@@ -36,4 +36,3 @@ class Solution(object):
         elif cur_count == max_count:
             modes.append(pre.val)
         return modes
-

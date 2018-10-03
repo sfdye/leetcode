@@ -15,4 +15,3 @@ class Solution:
                 else:
                     dp[i][j] = cur_match and dp[i + 1][j + 1]
         return dp[0][0]
-

@@ -28,4 +28,3 @@ class Solution:
                     bfs(i, j)
                     count += 1
         return count
-

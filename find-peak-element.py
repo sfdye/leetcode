@@ -12,4 +12,3 @@ class Solution:
             else:
                 hi = mid
         return lo
-
