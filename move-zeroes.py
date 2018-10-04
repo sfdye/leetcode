@@ -10,5 +10,4 @@ class Solution(object):
                 nums[slow] = nums[fast]
                 slow += 1
             fast += 1
-        nums[slow:] = [0] * (len(nums)-slow)
-        
+        nums[slow:] = [0] * (len(nums) - slow)
