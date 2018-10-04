@@ -17,7 +17,7 @@ class Solution(object):
             now = min(n, read4(buf4))
             if now == 0:
                 break
-            buf[count : count + now + 1] = buf4
+            buf[count : count + now + 1] = buf4[: now + 1]
             count += now
             n -= now
         return count
