@@ -18,9 +18,9 @@ class Solution:
                         diagonal.add(row + col)
                         antidiagonal.add(row - col)
                         dfs(row + 1)
-                        cols.remove(col)
-                        diagonal.remove(row + col)
                         antidiagonal.remove(row - col)
+                        diagonal.remove(row + col)
+                        cols.remove(col)
 
         dfs(0)
         return self.ans
