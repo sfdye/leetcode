@@ -6,13 +6,13 @@ class Solution:
         """
         p = list(range(1001))
 
-        def find(x):
-            if p[x] != x:
-                p[x] = find(p[x])
-            return p[x]
+        def find(u):
+            if p[u] != u:
+                p[u] = find(p[u])
+            return p[u]
 
         for edge in edges:
             u, v = map(find, edge)
             if u == v:
-                return edge[0], edge[1]
+                return edge
             p[u] = p[v]
