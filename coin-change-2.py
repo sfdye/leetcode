@@ -10,4 +10,3 @@ class Solution(object):
             for v in range(coin, amount + 1):
                 dp[v] += dp[v - coin]
         return dp[-1]
-

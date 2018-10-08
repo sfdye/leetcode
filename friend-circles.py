@@ -17,4 +17,3 @@ class Solution:
                 if M[i][j]:
                     p[find(i)] = p[find(j)]
         return len(set(map(find, p)))
-
