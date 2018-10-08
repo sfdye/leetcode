@@ -25,4 +25,3 @@ class Solution:
                 left += 1
             right += 1
         return s[ans[1] : ans[2] + 1] if ans[0] < float("inf") else ""
-

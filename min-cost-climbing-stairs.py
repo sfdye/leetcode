@@ -8,4 +8,3 @@ class Solution:
         for i in range(2, len(cost)):
             a, b = b, min(a, b) + cost[i]
         return min(a, b)
-

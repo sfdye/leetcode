@@ -13,4 +13,3 @@ class Solution:
                 ans = max(ans, i - start + 1)
             d[ch] = i
         return ans
-

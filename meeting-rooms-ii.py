@@ -21,4 +21,3 @@ class Solution:
             else:
                 heapq.heappush(h, interval.end)
         return len(h)
-

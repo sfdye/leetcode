@@ -19,4 +19,3 @@ class Solution:
             else:
                 merged[-1].end = max(merged[-1].end, interval.end)
         return merged
-

@@ -25,4 +25,3 @@ class Solution:
                 else:
                     dic[node].neighbors.append(dic[neighbor])
         return node_copy
-
