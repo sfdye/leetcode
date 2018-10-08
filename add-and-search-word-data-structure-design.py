@@ -3,8 +3,8 @@ class WordDictionary:
         """
         Initialize your data structure here.
         """
-
-        self.root = {}
+        TrieNode = lambda: collections.defaultdict(TrieNode)
+        self.trie = TrieNode()
 
     def addWord(self, word):
         """
@@ -12,10 +12,20 @@ class WordDictionary:
         :type word: str
         :rtype: void
         """
-        node = self.root
-        for ch in word:
-            node = node.setdefault(ch, {})
-        node[None] = None
+        node = self.trie
+        for c in word:
+            node = node[c]
+        node["#"] = None
+
+    def find(self, node, word):
+        if not word:
+            return "#" in node
+        else:
+            for c in word:
+                if c != ".":
+                    return c in node and self.find(node[c], word[1:])
+                else:
+                    return any(self.find(child, word[1:]) for child in node.values() if child)
 
     def search(self, word):
         """
@@ -23,17 +33,7 @@ class WordDictionary:
         :type word: str
         :rtype: bool
         """
-
-        def find(word, node):
-            if not word:
-                return None in node
-            for ch in word:
-                if ch != ".":
-                    return ch in node and find(word[1:], node[ch])
-                else:
-                    return any(find(word[1:], child) for child in node.values() if child)
-
-        return find(word, self.root)
+        return self.find(self.trie, word)
 
 
 # Your WordDictionary object will be instantiated and called as such:
