@@ -15,7 +15,7 @@ class Trie:
         node = self.trie
         for c in word:
             node = node[c]
-        node["#"] = "#"
+        node["#"] = None
 
     def search(self, word):
         """
