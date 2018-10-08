@@ -4,16 +4,17 @@ class Solution:
         :type M: List[List[int]]
         :rtype: int
         """
-        N = len(M)
-        p = list(range(N))
+        n = len(M)
+        p = list(range(n))
 
-        def find(x):
-            if p[x] != x:
-                p[x] = find(p[x])
-            return p[x]
+        def find(u):
+            if p[u] != u:
+                p[u] = find(p[u])
+            return p[u]
 
-        for i in range(N):
-            for j in range(N):
-                if M[i][j] == 1:
+        for i in range(n):
+            for j in range(i):
+                if M[i][j]:
                     p[find(i)] = p[find(j)]
         return len(set(map(find, p)))
+
