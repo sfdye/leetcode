@@ -3,8 +3,8 @@ class Trie:
         """
         Initialize your data structure here.
         """
-
-        self.root = {}
+        TrieNode = lambda: collections.defaultdict(TrieNode)
+        self.trie = TrieNode()
 
     def insert(self, word):
         """
@@ -12,11 +12,10 @@ class Trie:
         :type word: str
         :rtype: void
         """
-
-        node = self.root
+        node = self.trie
         for c in word:
-            node = node.setdefault(c, {})
-        node[None] = None
+            node = node[c]
+        node["#"] = None
 
     def search(self, word):
         """
@@ -24,13 +23,13 @@ class Trie:
         :type word: str
         :rtype: bool
         """
-
-        node = self.root
+        node = self.trie
         for c in word:
             if c not in node:
                 return False
-            node = node[c]
-        return None in node
+            else:
+                node = node[c]
+        return "#" in node
 
     def startsWith(self, prefix):
         """
@@ -38,12 +37,12 @@ class Trie:
         :type prefix: str
         :rtype: bool
         """
-
-        node = self.root
+        node = self.trie
         for c in prefix:
             if c not in node:
                 return False
-            node = node[c]
+            else:
+                node = node[c]
         return True
 
 
