@@ -12,14 +12,12 @@ class Solution:
         for u, v, p in flights:
             w[u][v] = p
         heap = [(0, src, K + 1)]
-        seen = set()
         while heap:
             p, u, K = heapq.heappop(heap)
-            seen.add(u)
             if u == dst:
                 return p
             if K > 0:
                 for v in w[u]:
-                    if v not in seen:
-                        heapq.heappush(heap, (p + w[u][v], v, K - 1))
+                    heapq.heappush(heap, (p + w[u][v], v, K - 1))
         return -1
+
