@@ -5,9 +5,10 @@ class Solution:
         :type target: int
         :rtype: List[int]
         """
-        d = {}
-        for idx, num in enumerate(nums):
-            if target - num in d:
-                return [d[target - num], idx]
+        seen = {}
+        for index, num in enumerate(nums):
+            if target - num in seen:
+                return seen[target - num], index
             else:
-                d[num] = idx
+                seen[num] = index
+
