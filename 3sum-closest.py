@@ -6,7 +6,7 @@ class Solution:
         :rtype: int
         """
         nums.sort()
-        ans = float("inf")
+        res = float("inf")
         for i in range(len(nums) - 2):
             l, r = i + 1, len(nums) - 1
             while l < r:
@@ -17,6 +17,7 @@ class Solution:
                     l += 1
                 else:
                     r -= 1
-                if abs(s - target) < abs(ans - target):
-                    ans = s
-        return ans
+                if abs(s - target) < abs(res - target):
+                    res = s
+        return res
+
