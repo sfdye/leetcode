@@ -19,8 +19,8 @@ class Solution:
             head, tail = node, node
             if node.left:
                 hl, tl = inorder(node.left)
-                node.left = tl
                 tl.right = node
+                node.left = tl
                 head = hl
             if node.right:
                 hr, tr = inorder(node.right)
@@ -33,5 +33,6 @@ class Solution:
 
         if not root:
             return None
-        head, tail = inorder(root)
-        return head
+        else:
+            return inorder(root)[0]
+
