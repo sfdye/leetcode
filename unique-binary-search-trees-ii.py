@@ -27,4 +27,3 @@ class Solution:
             return trees or [None]
 
         return generate(1, n)
-

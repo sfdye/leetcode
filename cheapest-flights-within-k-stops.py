@@ -20,4 +20,3 @@ class Solution:
                 for v in w[u]:
                     heapq.heappush(heap, (p + w[u][v], v, K - 1))
         return -1
-

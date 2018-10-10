@@ -23,4 +23,3 @@ class Solution(object):
             c += dc[d]
             count += 1
         return ans
-
