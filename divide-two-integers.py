@@ -18,4 +18,3 @@ class Solution:
         if minus:
             res = -res
         return min(max(res, -1 << 31), (1 << 31) - 1)
-

@@ -13,4 +13,3 @@ class Solution:
             else:
                 r -= 1
         return max_area
-

@@ -20,4 +20,3 @@ class Solution:
                 if abs(s - target) < abs(res - target):
                     res = s
         return res
-

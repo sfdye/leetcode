@@ -33,4 +33,3 @@ class Solution:
         res = []
         findNsum(sorted(nums), target, 4, [])
         return res
-

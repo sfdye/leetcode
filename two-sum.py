@@ -11,4 +11,3 @@ class Solution:
                 return seen[target - num], index
             else:
                 seen[num] = index
-

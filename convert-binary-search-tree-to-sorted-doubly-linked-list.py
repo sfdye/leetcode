@@ -35,4 +35,3 @@ class Solution:
             return None
         else:
             return inorder(root)[0]
-
