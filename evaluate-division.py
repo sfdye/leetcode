@@ -16,7 +16,3 @@ class Solution:
                 for j in d[k]:
                     d[i][j] = d[i][k] * d[k][j]
         return [d[a].get(b, -1.0) for a, b in queries]
-            
-            
-        
-                        
