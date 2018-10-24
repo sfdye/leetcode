@@ -10,12 +10,12 @@
 - Elegant (take advantage of Python standard libraries where possible)
 - Efficient (most solutions beat 80% Python submissions)
 
-## Leetcode utils
+## Leetcode utils that I use
 
 - [leetcode-cli](https://skygragon.github.io/leetcode-cli/)
 - [Leetcode-Search](https://github.com/TooSchoolForCool/LeetCode-Search) (Alfled worflow)
 
-### Use leetcode-cli config in this repo
+## Use leetcode-cli config in this repo
 
 ```bash
 $ npm install -g leetcode-cli
