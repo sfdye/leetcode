@@ -1,8 +1,16 @@
 class Solution:
-    def topKFrequent(self, words, k):
+    def topKFrequent(self, nums, k):
         """
-        :type words: List[str]
+        :type nums: List[int]
         :type k: int
-        :rtype: List[str]
+        :rtype: List[int]
         """
-        return [k for k, _ in sorted(collections.Counter(words).items(), key=lambda x: (-x[1], x[0]))][:k]
+        feq = collections.defaultdict(list)
+        for key, count in collections.Counter(nums).items():
+            feq[count].append(key)
+        res = []
+        for i in range(len(nums) + 1, -1, -1):
+            res.extend(feq[i])
+            if len(res) >= k:
+                break
+        return res[:k]
