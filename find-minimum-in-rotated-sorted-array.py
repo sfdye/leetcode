@@ -5,14 +5,10 @@ class Solution(object):
         :rtype: int
         """
         lo, hi = 0, len(nums) - 1
-        if len(nums) == 1 or nums[lo] < nums[hi]:
-            return nums[0]
-        while lo <= hi:
+        while lo < hi:
             mid = (lo + hi) // 2
-            if nums[mid] > nums[mid + 1]:
-                return nums[mid + 1]
-            elif nums[mid] < nums[lo]:
-                hi = mid - 1
+            if nums[mid] < nums[hi]:
+                hi = mid
             else:
                 lo = mid + 1
-
+        return nums[lo]
