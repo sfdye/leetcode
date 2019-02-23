@@ -19,4 +19,3 @@ class Solution:
             pre.next, a.next, b.next = b, b.next, a
             pre = a
         return dummy.next
-

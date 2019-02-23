@@ -14,4 +14,3 @@ class Solution(object):
             else:
                 hi -= 1
         return nums[lo]
-

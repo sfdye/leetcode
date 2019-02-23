@@ -27,4 +27,3 @@ class Solution:
         dfs(root)
 
         return self.ans
-

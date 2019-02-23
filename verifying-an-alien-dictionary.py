@@ -11,4 +11,3 @@ class Solution:
             return len(a) < len(b)
 
         return all(less(words[i], words[i + 1]) for i in range(len(words) - 1))
-

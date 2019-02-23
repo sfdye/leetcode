@@ -20,4 +20,3 @@ class Solution:
             root.right = self.prev
             root.left = None
             self.prev = root
-

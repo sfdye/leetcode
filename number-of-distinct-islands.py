@@ -24,4 +24,3 @@ class Solution:
                     if shape:
                         shapes.add(tuple(shape))
         return len(shapes)
-

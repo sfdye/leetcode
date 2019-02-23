@@ -17,4 +17,3 @@ class Solution:
                     new_leaves.append(j)
             leaves = new_leaves
         return leaves
-

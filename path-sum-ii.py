@@ -26,4 +26,3 @@ class Solution:
         dfs(root, sum, [])
 
         return res
-

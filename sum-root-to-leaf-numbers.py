@@ -23,4 +23,3 @@ class Solution:
         dfs(root, 0)
 
         return self.res
-

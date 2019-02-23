@@ -7,4 +7,3 @@ class Solution:
             A.append(K % 10)
             K //= 10
         return A[::-1]
-

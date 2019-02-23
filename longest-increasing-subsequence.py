@@ -13,4 +13,3 @@ class Solution:
             else:
                 dp[p] = num
         return len(dp)
-

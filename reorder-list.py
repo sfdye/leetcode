@@ -42,4 +42,3 @@ class Solution(object):
             l1.next = l2
             l2.next = n1
             l1, l2 = n1, n2
-

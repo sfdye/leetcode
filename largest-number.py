@@ -11,4 +11,3 @@ class Solution(object):
         """
         nums = sorted(map(str, nums), key=LargerNumKey)
         return "".join(nums) if nums[0] != "0" else "0"
-

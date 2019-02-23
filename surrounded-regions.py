@@ -23,4 +23,3 @@ class Solution:
                     board[r][c] = "X"
                 else:
                     board[r][c] = "O"
-

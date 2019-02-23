@@ -13,4 +13,3 @@ class Solution(object):
                 cur_sum -= nums[left]
                 left += 1
         return ans if ans < float("inf") else 0
-

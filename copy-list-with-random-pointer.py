@@ -24,4 +24,3 @@ class Solution(object):
         node.next = self.copyRandomList(head.next)
         node.random = self.copyRandomList(head.random)
         return node
-

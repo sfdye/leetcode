@@ -9,4 +9,3 @@ class Solution:
                 ans.append(A[j] ** 2)
                 j -= 1
         return ans[::-1]
-
