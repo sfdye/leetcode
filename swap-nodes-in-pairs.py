@@ -11,14 +11,12 @@ class Solution:
         :type head: ListNode
         :rtype: ListNode
         """
-        dummy = ListNode(0)
-        dummy.next, node = head, dummy
-
-        while node and node.next and node.next.next:
-            tmp = node.next.next
-            node.next.next = tmp.next
-            tmp.next = node.next
-            node.next = tmp
-            node = node.next.next
-
+        dummy = pre = ListNode(0)
+        pre.next = head
+        while pre.next and pre.next.next:
+            a = pre.next
+            b = a.next
+            pre.next, a.next, b.next = b, b.next, a
+            pre = a
         return dummy.next
+
