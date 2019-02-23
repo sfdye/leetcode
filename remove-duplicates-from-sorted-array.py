@@ -1,14 +1,8 @@
 class Solution:
-    def removeDuplicates(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        if not nums:
-            return 0
+    def removeDuplicates(self, nums: List[int]) -> int:
         slow = 0
-        for fast in range(1, len(nums)):
-            if nums[fast] != nums[slow]:
-                slow += 1
+        for fast in range(len(nums)):
+            if slow == 0 or nums[fast] != nums[slow - 1]:
                 nums[slow] = nums[fast]
-        return slow + 1
+                slow += 1
+        return slow
