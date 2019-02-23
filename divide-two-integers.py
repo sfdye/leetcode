@@ -1,20 +1,15 @@
 class Solution:
-    def divide(self, dividend, divisor):
-        """
-        :type dividend: int
-        :type divisor: int
-        :rtype: int
-        """
-        minus = (dividend < 0) ^ (divisor < 0)
+    def divide(self, dividend: int, divisor: int) -> int:
+        minus = (dividend > 0) ^ (divisor > 0)
         dividend, divisor = abs(dividend), abs(divisor)
-        res = 0
-        while dividend >= divisor:
-            multiple, cur = divisor, 1
-            while multiple << 1 <= dividend:
-                multiple <<= 1
-                cur <<= 1
-            res += cur
+        quotient = 0
+        while divisor <= dividend:
+            multiple, q = divisor, 1
+            while multiple + multiple <= dividend:
+                multiple += multiple
+                q += q
             dividend -= multiple
+            quotient += q
         if minus:
-            res = -res
-        return min(max(res, -1 << 31), (1 << 31) - 1)
+            quotient = -quotient
+        return min(max(quotient, -1 << 31), (1 << 31) - 1)
