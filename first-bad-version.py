@@ -10,13 +10,12 @@ class Solution:
         :type n: int
         :rtype: int
         """
-
-        lo, hi = 1, n
-        while lo <= hi:
+        lo, hi = 0, n
+        while lo < hi:
             mid = (lo + hi) // 2
-            if isBadVersion(mid) and not isBadVersion(mid - 1):
-                return mid
-            elif isBadVersion(mid):
-                hi = mid - 1
-            else:
+            if not isBadVersion(mid):
                 lo = mid + 1
+            else:
+                hi = mid
+        return lo
+
