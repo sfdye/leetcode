@@ -1,19 +1,14 @@
 class Solution:
-    def getPermutation(self, n, k):
-        """
-        :type n: int
-        :type k: int
-        :rtype: str
-        """
-        k -= 1
-        factorial = [1]
+    def getPermutation(self, n: int, k: int) -> str:
+        fact = [1]
         for i in range(1, n):
-            factorial.append(factorial[-1] * i)
-        nums = list(range(1, n + 1))
+            fact += (fact[-1] * i,)
+        k -= 1
+        nums = list(i + 1 for i in range(n))
         ans = ""
-        while n:
-            n -= 1
-            i, k = divmod(k, factorial[n])
-            ans += str(nums[i])
-            del nums[i]
+        for i in range(n - 1, -1, -1):
+            q, k = divmod(k, fact[i])
+            ans += str(nums[q])
+            del nums[q]
         return ans
+
