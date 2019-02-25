@@ -1,18 +1,14 @@
-class Solution(object):
-    def spiralOrder(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: List[int]
-        """
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         if not matrix:
             return []
         dr = [0, 1, 0, -1]
         dc = [1, 0, -1, 0]
-        r = c = d = count = 0
+        r = c = d = 0
         rows = len(matrix)
         cols = len(matrix[0])
         ans = []
-        while count < rows * cols:
+        for _ in range(rows * cols):
             ans.append(matrix[r][c])
             matrix[r][c] = "#"
             nr = r + dr[d]
@@ -21,5 +17,5 @@ class Solution(object):
                 d = (d + 1) % 4
             r += dr[d]
             c += dc[d]
-            count += 1
         return ans
+
