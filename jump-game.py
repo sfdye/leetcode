@@ -1,11 +1,7 @@
 class Solution:
-    def canJump(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: bool
-        """
-        last_pos = len(nums) - 1
+    def canJump(self, nums: List[int]) -> bool:
+        m = len(nums) - 1
         for i in range(len(nums) - 2, -1, -1):
-            if i + nums[i] >= last_pos:
-                last_pos = i
-        return last_pos == 0
+            if i + nums[i] >= m:
+                m = i
+        return m == 0
