@@ -10,4 +10,3 @@ class Solution:
             p *= p
             n >>= 1
         return ans
-

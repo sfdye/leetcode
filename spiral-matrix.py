@@ -18,4 +18,3 @@ class Solution:
             r += dr[d]
             c += dc[d]
         return ans
-

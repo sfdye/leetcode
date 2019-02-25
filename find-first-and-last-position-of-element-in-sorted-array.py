@@ -21,4 +21,3 @@ class Solution:
                 hi = mid
         right = lo - 1
         return [left, right]
-

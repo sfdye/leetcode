@@ -11,4 +11,3 @@ class Solution:
             ans += str(nums[q])
             del nums[q]
         return ans
-
