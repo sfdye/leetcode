@@ -1,22 +1,17 @@
 class Solution:
-    def searchMatrix(self, matrix, target):
-        """
-        :type matrix: List[List[int]]
-        :type target: int
-        :rtype: bool
-        """
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         if not matrix:
             return False
-
-        n, m = len(matrix), len(matrix[0])
-        lo, hi = 0, n * m - 1
+        m, n = len(matrix), len(matrix[0])
+        lo, hi = 0, m * n - 1
         while lo <= hi:
             mid = (lo + hi) // 2
-            num = matrix[mid // m][mid % m]
-            if num == target:
+            x = matrix[mid // n][mid % n]
+            if x == target:
                 return True
-            elif num > target:
-                hi = mid - 1
-            else:
+            elif x < target:
                 lo = mid + 1
+            else:
+                hi = mid - 1
         return False
+
