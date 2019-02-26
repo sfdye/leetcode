@@ -1,16 +1,10 @@
 class Solution:
-    def simplifyPath(self, path):
-        """
-        :type path: str
-        :rtype: str
-        """
+    def simplifyPath(self, path: str) -> str:
         stack = []
-        for x in path.split("/"):
-            if x == "" or x == ".":
-                continue
-            elif x == "..":
+        for d in path.split("/"):
+            if d == "..":
                 if stack:
                     stack.pop()
-            else:
-                stack.append(x)
+            elif d != "" and d != ".":
+                stack.append(d)
         return "/" + "/".join(stack)
