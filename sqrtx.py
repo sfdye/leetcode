@@ -1,16 +1,12 @@
 class Solution:
-    def mySqrt(self, x):
-        """
-        :type x: int
-        :rtype: int
-        """
+    def mySqrt(self, x: int) -> int:
         lo, hi = 0, x
         while lo <= hi:
             mid = (lo + hi) // 2
-            if mid ** 2 == x:
+            if mid ** 2 <= x < (mid + 1) ** 2:
                 return mid
-            elif mid ** 2 < x:
-                lo = mid + 1
-            else:
+            elif mid ** 2 > x:
                 hi = mid - 1
-        return lo - 1
+            else:
+                lo = mid + 1
+
