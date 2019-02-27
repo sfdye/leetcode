@@ -1,29 +1,20 @@
 class Solution:
-    def exist(self, board, word):
-        """
-        :type board: List[List[str]]
-        :type word: str
-        :rtype: bool
-        """
-        if not board:
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        if not board or not word:
             return False
+        rows, cols = len(board), len(board[0])
 
-        n, m = len(board), len(board[0])
-
-        def dfs(i, j, word):
+        def dfs(r, c, word):
             if word == "":
                 return True
-            if i < 0 or i >= n or j < 0 or j >= m or board[i][j] != word[0]:
+            if r < 0 or r >= rows or c < 0 or c >= cols or board[r][c] != word[0]:
                 return False
-            board[i][j] = "#"
+            board[r][c] = "#"
             ret = (
-                dfs(i - 1, j, word[1:]) or dfs(i, j + 1, word[1:]) or dfs(i + 1, j, word[1:]) or dfs(i, j - 1, word[1:])
+                dfs(r + 1, c, word[1:]) or dfs(r, c + 1, word[1:]) or dfs(r - 1, c, word[1:]) or dfs(r, c - 1, word[1:])
             )
-            board[i][j] = word[0]
+            board[r][c] = word[0]
             return ret
 
-        for i in range(n):
-            for j in range(m):
-                if dfs(i, j, word):
-                    return True
-        return False
+        return any(dfs(r, c, word) for r in range(rows) for c in range(cols))
+
