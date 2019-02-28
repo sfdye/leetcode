@@ -17,4 +17,3 @@ class Solution:
             return ret
 
         return any(dfs(r, c, word) for r in range(rows) for c in range(cols))
-

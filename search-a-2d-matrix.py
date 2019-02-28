@@ -14,4 +14,3 @@ class Solution:
             else:
                 hi = mid - 1
         return False
-
