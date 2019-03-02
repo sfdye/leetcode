@@ -13,22 +13,24 @@
 
 
 class Solution:
-    def sortedListToBST(self, head: "ListNode") -> "TreeNode":
-        def build_tree(nums):
-            if len(nums) == 0:
-                return None
-            elif len(nums) == 1:
-                return TreeNode(nums[0])
-            else:
-                mid = len(nums) // 2
-                root = TreeNode(nums[mid])
-                root.left = build_tree(nums[:mid])
-                root.right = build_tree(nums[mid + 1 :])
+    def sortedListToBST(self, head: ListNode) -> TreeNode:
+        def build(l, r):
+            nonlocal head
+
+            if l <= r:
+                m = (l + r) // 2
+                left = build(l, m - 1)
+                root = TreeNode(head.val)
+                root.left = left
+                head = head.next
+                root.right = build(m + 1, r)
                 return root
 
-        nums = []
-        while head:
-            nums.append(head.val)
-            head = head.next
+        n = 0
+        tmp = head
+        while tmp:
+            tmp = tmp.next
+            n += 1
 
-        return build_tree(nums)
+        return build(0, n - 1)
+
