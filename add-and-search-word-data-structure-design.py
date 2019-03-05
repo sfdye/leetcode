@@ -1,4 +1,5 @@
 class WordDictionary:
+
     def __init__(self):
         """
         Initialize your data structure here.
@@ -6,36 +7,30 @@ class WordDictionary:
         TrieNode = lambda: collections.defaultdict(TrieNode)
         self.trie = TrieNode()
 
-    def addWord(self, word):
+    def addWord(self, word: str) -> None:
         """
         Adds a word into the data structure.
-        :type word: str
-        :rtype: void
         """
-        node = self.trie
+        node = self.trie 
         for c in word:
             node = node[c]
-        node["#"] = None
+        node["$"] = None
 
-    def find(self, node, word):
-        if not word:
-            return "#" in node
-        else:
-            for c in word:
-                if c != ".":
-                    return c in node and self.find(node[c], word[1:])
-                else:
-                    return any(self.find(child, word[1:]) for child in node.values() if child)
-
-    def search(self, word):
+    def search(self, word: str) -> bool:
         """
         Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter.
-        :type word: str
-        :rtype: bool
         """
-        return self.find(self.trie, word)
-
-
+        return self._search(self.trie, word)
+    
+    def _search(self, node, word):
+        if not word:
+            return "$" in node
+        else:
+            if word[0] == ".":
+                return any(self._search(child, word[1:]) for child in node.values() if child)
+            else:
+                return word[0] in node and self._search(node[word[0]], word[1:])
+        
 # Your WordDictionary object will be instantiated and called as such:
 # obj = WordDictionary()
 # obj.addWord(word)
