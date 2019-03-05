@@ -15,4 +15,3 @@ class Solution:
         reverse(0, n - 1)
         reverse(0, k - 1)
         reverse(k, n - 1)
-

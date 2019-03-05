@@ -18,4 +18,3 @@ class Solution:
             for child in node.left, node.right:
                 if child:
                     queue.append((child, depth + 1))
-

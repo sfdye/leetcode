@@ -10,4 +10,3 @@ class Solution:
                     row.append(dp[-1][j] + dp[-1][j - 1])
             dp.append(row)
         return dp
-

@@ -33,4 +33,3 @@ class Solution:
             n += 1
 
         return build(0, n - 1)
-

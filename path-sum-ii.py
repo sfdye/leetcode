@@ -22,4 +22,3 @@ class Solution:
 
         dfs(root, [], sum)
         return ans
-

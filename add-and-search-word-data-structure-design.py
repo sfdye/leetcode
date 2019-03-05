@@ -1,5 +1,4 @@
 class WordDictionary:
-
     def __init__(self):
         """
         Initialize your data structure here.
@@ -11,7 +10,7 @@ class WordDictionary:
         """
         Adds a word into the data structure.
         """
-        node = self.trie 
+        node = self.trie
         for c in word:
             node = node[c]
         node["$"] = None
@@ -21,7 +20,7 @@ class WordDictionary:
         Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter.
         """
         return self._search(self.trie, word)
-    
+
     def _search(self, node, word):
         if not word:
             return "$" in node
@@ -30,7 +29,8 @@ class WordDictionary:
                 return any(self._search(child, word[1:]) for child in node.values() if child)
             else:
                 return word[0] in node and self._search(node[word[0]], word[1:])
-        
+
+
 # Your WordDictionary object will be instantiated and called as such:
 # obj = WordDictionary()
 # obj.addWord(word)

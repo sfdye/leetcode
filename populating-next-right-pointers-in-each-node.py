@@ -21,4 +21,3 @@ class Solution:
                 cur = cur.next
             pre = pre.left
         return root
-
