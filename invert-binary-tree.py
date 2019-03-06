@@ -7,17 +7,10 @@
 
 
 class Solution:
-    def invertTree(self, root):
-        """
-        :type root: TreeNode
-        :rtype: TreeNode
-        """
+    def invertTree(self, root: TreeNode) -> TreeNode:
+        if root:
+            root.left, root.right = root.right, root.left
+            self.invertTree(root.left)
+            self.invertTree(root.right)
+            return root
 
-        def invert(root):
-            if root:
-                self.invertTree(root.left)
-                self.invertTree(root.right)
-                root.left, root.right = root.right, root.left
-                return root
-
-        return invert(root)
