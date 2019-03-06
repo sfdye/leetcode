@@ -7,23 +7,21 @@
 
 
 class Solution:
-    def countNodes(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
-
-        def get_height(node):
-            if not node:
-                return 0
-            else:
-                return get_height(node.left) + 1
-
+    def countNodes(self, root: TreeNode) -> int:
         if not root:
             return 0
-        left_height = get_height(root.left)
-        right_height = get_height(root.right)
-        if left_height == right_height:
-            return (1 << left_height) + self.countNodes(root.right)
         else:
-            return (1 << right_height) + self.countNodes(root.left)
+            hl = self.get_depth(root.left)
+            hr = self.get_depth(root.right)
+            if hl == hr:
+                return (1 << hl) + self.countNodes(root.right)
+            else:
+                return (1 << hr) + self.countNodes(root.left)
+
+    def get_depth(self, root):
+        height = 0
+        while root:
+            height += 1
+            root = root.left
+        return height
+
