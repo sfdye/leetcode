@@ -1,15 +1,11 @@
 class Solution:
-    def calculate(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        num, stack, sign = 0, [], "+"
-        s += " "
-        for i in range(len(s)):
-            if s[i].isdigit():
-                num = num * 10 + int(s[i])
-            elif s[i] in "+-*/" or i == len(s) - 1:
+    def calculate(self, s: str) -> int:
+        stack, sign, num = [], "+", 0
+        s += "$"
+        for c in s:
+            if c.isdigit():
+                num = num * 10 + int(c)
+            elif c in "+-*/$":
                 if sign == "+":
                     stack.append(num)
                 elif sign == "-":
@@ -19,5 +15,5 @@ class Solution:
                 else:
                     stack.append(int(stack.pop() / num))
                 num = 0
-                sign = s[i]
+                sign = c
         return sum(stack)
