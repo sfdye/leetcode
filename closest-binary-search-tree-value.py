@@ -16,8 +16,6 @@ class Solution:
         self.ans = float("inf")
 
         while root:
-            if root.val == target:
-                return root.val
             if abs(root.val - target) < abs(self.ans - target):
                 self.ans = root.val
             if root.val < target:
