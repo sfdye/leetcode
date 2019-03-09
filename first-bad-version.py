@@ -10,11 +10,12 @@ class Solution:
         :type n: int
         :rtype: int
         """
-        lo, hi = 0, n
+        lo, hi = 1, n
         while lo < hi:
             mid = (lo + hi) // 2
-            if not isBadVersion(mid):
-                lo = mid + 1
-            else:
+            if isBadVersion(mid):
                 hi = mid
+            else:
+                lo = mid + 1
         return lo
+
