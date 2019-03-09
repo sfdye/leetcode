@@ -1,18 +1,7 @@
 class Solution:
-    def isStrobogrammatic(self, num):
-        """
-        :type num: str
-        :rtype: bool
-        """
-
+    def isStrobogrammatic(self, num: str) -> bool:
         for i in range(len(num) // 2 + 1):
-            j = len(num) - i - 1
-            if not (
-                (num[i] == num[j] == "0")
-                or (num[i] == num[j] == "1")
-                or (num[i] == num[j] == "8")
-                or (num[i] == "6" and num[j] == "9")
-                or (num[i] == "9" and num[j] == "6")
-            ):
+            if num[i] + num[~i] not in ["00", "11", "88", "69", "96"]:
                 return False
         return True
+
