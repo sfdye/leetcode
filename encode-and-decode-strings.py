@@ -5,7 +5,7 @@ class Codec:
         :type strs: List[str]
         :rtype: str
         """
-        return "".join(["{}:{}".format(len(s), s) for s in strs])
+        return "".join("{}:{}".format(len(s), s) for s in strs)
 
     def decode(self, s):
         """Decodes a single string to a list of strings.
@@ -17,7 +17,7 @@ class Codec:
         i = j = 0
         while i < len(s):
             j = s.find(":", i)
-            i = j + 1 + int(s[i:j])
+            i = j + int(s[i:j]) + 1
             strs.append(s[j + 1 : i])
         return strs
 
