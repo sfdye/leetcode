@@ -7,22 +7,17 @@
 
 
 class Solution:
-    def verticalOrder(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[List[int]]
-        """
+    def verticalOrder(self, root: TreeNode) -> List[List[int]]:
         if not root:
             return []
-        d = collections.defaultdict(list)
-        queue = [(root, 0)]
+        ans = collections.defaultdict(list)
+        queue = collections.deque([(root, 0)])
         while queue:
-            level = []
-            for node, col in queue:
-                d[col].append(node.val)
-                if node.left:
-                    level.append((node.left, col - 1))
-                if node.right:
-                    level.append((node.right, col + 1))
-            queue = level
-        return [d[col] for col in sorted(d)]
+            node, col = queue.popleft()
+            ans[col].append(node.val)
+            if node.left:
+                queue.append((node.left, col - 1))
+            if node.right:
+                queue.append((node.right, col + 1))
+        return [ans[d] for d in sorted(ans)]
+
