@@ -8,4 +8,3 @@ class Solution:
                         if B[k][j] != 0:
                             C[i][j] += A[i][k] * B[k][j]
         return C
-

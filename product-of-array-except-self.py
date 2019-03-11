@@ -8,4 +8,3 @@ class Solution:
             ans[i] *= p
             p *= nums[i]
         return ans
-\

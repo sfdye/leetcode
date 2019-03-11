@@ -25,4 +25,3 @@ class Solution:
         ans = []
         dfs(root, "")
         return ans
-

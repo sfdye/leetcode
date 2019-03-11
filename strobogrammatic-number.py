@@ -4,4 +4,3 @@ class Solution:
             if num[i] + num[~i] not in ["00", "11", "88", "69", "96"]:
                 return False
         return True
-

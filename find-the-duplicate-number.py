@@ -11,4 +11,3 @@ class Solution:
             fast = nums[fast]
             slow = nums[slow]
         return fast
-

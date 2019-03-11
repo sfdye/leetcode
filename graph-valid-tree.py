@@ -15,4 +15,3 @@ class Solution:
                 return False
             p[find(v)] = find(u)
         return len(set(map(find, p))) == 1
-

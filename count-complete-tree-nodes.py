@@ -24,4 +24,3 @@ class Solution:
             height += 1
             root = root.left
         return height
-
