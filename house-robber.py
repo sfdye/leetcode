@@ -1,24 +1,9 @@
-class Solution(object):
-    def rob(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-
-        length = len(nums)
-
-        if length == 0:
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        if not nums:
             return 0
-        elif length == 1:
-            return nums[0]
-        elif length == 2:
-            return max(nums[0], nums[1])
+        prev_max, cur_max = 0, 0
+        for num in nums:
+            cur_max, prev_max = max(prev_max + num, cur_max), cur_max
+        return cur_max
 
-        f = [0] * length
-
-        f[0] = nums[0]
-        f[1] = max(nums[0], nums[1])
-        for i in range(2, length):
-            f[i] = max(f[i - 1], f[i - 2] + nums[i])
-
-        return f[length - 1]
