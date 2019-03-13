@@ -54,4 +54,3 @@ class Solution:
             return s
 
         return calc(nestedList, 1)
-

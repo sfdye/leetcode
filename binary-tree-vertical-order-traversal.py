@@ -20,4 +20,3 @@ class Solution:
             if node.right:
                 queue.append((node.right, col + 1))
         return [ans[d] for d in sorted(ans)]
-

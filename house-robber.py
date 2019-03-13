@@ -6,4 +6,3 @@ class Solution:
         for num in nums:
             cur_max, prev_max = max(prev_max + num, cur_max), cur_max
         return cur_max
-
