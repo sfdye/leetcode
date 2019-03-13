@@ -1,22 +1,16 @@
 class Solution:
-    def sortTransformedArray(self, nums, a, b, c):
-        """
-        :type nums: List[int]
-        :type a: int
-        :type b: int
-        :type c: int
-        :rtype: List[int]
-        """
-        nums = [a * x ** 2 + b * x + c for x in nums]
-        ans = [0] * len(nums)
-        left, right = 0, len(nums) - 1
-        i, d = (-1, -1) if a > 0 else (0, 1)
-        while left <= right:
-            if nums[left] * -d > nums[right] * -d:
-                ans[i] = nums[left]
-                left += 1
+    def sortTransformedArray(self, nums: List[int], a: int, b: int, c: int) -> List[int]:
+        nums = [a * x * x + b * x + c for x in nums]
+        ans = [0 for _ in range(len(nums))]
+        i, j = 0, len(nums) - 1
+        k, d = (-1, -1) if a > 0 else (0, 1)
+        while i <= j:
+            if nums[i] * -d > nums[j] * -d:
+                ans[k] = nums[i]
+                i += 1
             else:
-                ans[i] = nums[right]
-                right -= 1
-            i += d
+                ans[k] = nums[j]
+                j -= 1
+            k += d
         return ans
+
