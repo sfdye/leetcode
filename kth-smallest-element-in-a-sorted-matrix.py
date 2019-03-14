@@ -1,15 +1,10 @@
 class Solution:
-    def kthSmallest(self, matrix, k):
-        """
-        :type matrix: List[List[int]]
-        :type k: int
-        :rtype: int
-        """
-        lo, hi = matrix[0][0], matrix[-1][-1]
-        while lo < hi:
-            mid = (lo + hi) // 2
-            if sum(bisect.bisect_right(row, mid) for row in matrix) < k:
-                lo = mid + 1
-            else:
-                hi = mid
-        return lo
+    def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
+        heap = [(num, 0, j) for j, num in enumerate(matrix[0])]
+        heapq.heapify(heap)
+        for _ in range(k):
+            cur, i, j = heapq.heappop(heap)
+            if i + 1 < len(matrix):
+                heapq.heappush(heap, (matrix[i + 1][j], i + 1, j))
+        return cur
+
