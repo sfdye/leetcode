@@ -5,9 +5,12 @@ class Solution:
         :type b: int
         :rtype: int
         """
-        MAX = 0X7FFFFFFF
-        mask = 0XFFFFFFFF
-
-        while b != 0:
-            a, b = (a ^ b) & mask, ((a & b) << 1) & mask
+        MAX = 0x7FFFFFFF
+        mask = 0xFFFFFFFF
+        carry = 0
+        while b:
+            carry = ((a & b) << 1) & mask
+            a = (a ^ b) & mask
+            b = carry
         return a if a < MAX else ~(a ^ mask)
+
