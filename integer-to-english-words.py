@@ -29,22 +29,22 @@ class Solution:
             "Eighteen",
             "Nineteen",
         ]
-        tens = ["", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
+        tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
         thousands = ["", "Thousand", "Million", "Billion"]
 
-        def word(num):
+        def read(num):
             if num == 0:
                 return ""
             elif num < 20:
                 return less_than_20[num] + " "
             elif num < 100:
-                return tens[num // 10] + " " + word(num % 10)
+                return tens[num // 10] + " " + read(num % 10)
             else:
-                return less_than_20[num // 100] + " Hundred " + word(num % 100)
+                return less_than_20[num // 100] + " Hundred " + read(num % 100)
 
         ans = ""
         for i in range(len(thousands)):
             if num % 1000 != 0:
-                ans = word(num % 1000) + thousands[i] + " " + ans
+                ans = read(num % 1000) + thousands[i] + " " + ans
             num //= 1000
         return ans.strip()
