@@ -1,15 +1,13 @@
-class Solution(object):
-    def shortestDistance(self, words, word1, word2):
-        """
-        :type words: List[str]
-        :type word1: str
-        :type word2: str
-        :rtype: int
-        """
-        p1, p2 = [], []
-        for i, word in enumerate(words):
-            if word == word1:
-                p1.append(i)
-            if word == word2:
-                p2.append(i)
-        return min(abs(i - j) for i in p1 for j in p2)
+class Solution:
+    def shortestDistance(self, words: List[str], word1: str, word2: str) -> int:
+        i1 = i2 = -1
+        ans = float("inf")
+        for i in range(len(words)):
+            if words[i] == word1:
+                i1 = i
+            elif words[i] == word2:
+                i2 = i
+            if i1 != -1 and i2 != -1:
+                ans = min(ans, abs(i1 - i2))
+        return ans
+
