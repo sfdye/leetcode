@@ -9,8 +9,8 @@ class Solution:
         for num in nums:
             i = 0
             while num:
-                if num & 1:
-                    ones[i] += 1
+                ones[i] += num & 1
                 i += 1
                 num >>= 1
         return sum(ones[i] * (N - ones[i]) for i in range(32))
+
