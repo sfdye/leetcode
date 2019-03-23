@@ -13,6 +13,7 @@ class Codec:
         :type root: TreeNode
         :rtype: str
         """
+        vals = []
 
         def preorder(root):
             if root:
@@ -22,7 +23,6 @@ class Codec:
             else:
                 vals.append("#")
 
-        vals = []
         preorder(root)
         return " ".join(vals)
 
@@ -32,18 +32,18 @@ class Codec:
         :type data: str
         :rtype: TreeNode
         """
+        vals = iter(data.split(" "))
 
         def dfs():
-            val = vals.next()
+            val = next(vals)
             if val == "#":
                 return None
             else:
-                node = TreeNode(val)
-                node.left = dfs()
-                node.right = dfs()
-                return node
+                root = TreeNode(val)
+                root.left = dfs()
+                root.right = dfs()
+                return root
 
-        vals = iter(data.split())
         return dfs()
 
 
