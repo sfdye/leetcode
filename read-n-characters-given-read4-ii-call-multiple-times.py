@@ -35,4 +35,3 @@ class Solution:
             buf[i : i + cur] = [self.queue.popleft() for _ in range(cur)]
             i += cur
         return i
-

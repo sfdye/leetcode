@@ -4,4 +4,3 @@ class Solution:
         m = max(c)
         mc = c.count(m)
         return max(len(tasks), (m - 1) * (n + 1) + mc)
-

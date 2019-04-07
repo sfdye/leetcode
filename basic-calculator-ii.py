@@ -19,4 +19,3 @@ class Solution:
                 cur = 0
                 sign = c
         return ans + pre
-

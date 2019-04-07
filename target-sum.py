@@ -11,4 +11,3 @@ class Solution:
                 return dfs(i + 1, cur + nums[i]) + dfs(i + 1, cur - nums[i])
 
         return dfs(0, 0)
-

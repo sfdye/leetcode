@@ -18,4 +18,3 @@ class Solution:
                 if not pre[b]:
                     queue.append(b)
         return ans if chars == set(ans) else ""
-

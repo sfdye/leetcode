@@ -18,4 +18,3 @@ class Solution:
                 res *= stack.pop()
                 res += stack.pop()
         return res + sign * num
-

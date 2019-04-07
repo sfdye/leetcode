@@ -7,4 +7,3 @@ class Solution:
             if i + 1 < len(matrix):
                 heapq.heappush(heap, (matrix[i + 1][j], i + 1, j))
         return cur
-

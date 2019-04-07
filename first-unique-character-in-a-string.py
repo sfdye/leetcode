@@ -5,4 +5,3 @@ class Solution:
             if counter[c] == 1:
                 return i
         return -1
-

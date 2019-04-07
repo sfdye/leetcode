@@ -13,4 +13,3 @@ class Solution:
             a = (a ^ b) & mask
             b = carry
         return a if a < MAX else ~(a ^ mask)
-

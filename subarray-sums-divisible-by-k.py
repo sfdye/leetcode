@@ -11,4 +11,3 @@ class Solution:
                 ans += d[s]
             d[s] += 1
         return ans
-

@@ -24,4 +24,3 @@ class Solution:
                     dfs(i, j, 0)
                     ans.add(tuple(shape))
         return len(ans)
-

@@ -40,4 +40,3 @@ class Solution:
                 if grid[i][j] == "0":
                     ans = max(ans, count[i][j])
         return ans
-

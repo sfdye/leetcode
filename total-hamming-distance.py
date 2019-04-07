@@ -13,4 +13,3 @@ class Solution:
                 i += 1
                 num >>= 1
         return sum(ones[i] * (N - ones[i]) for i in range(32))
-

@@ -10,4 +10,3 @@ class Solution:
             s2, s1 = s1, s0
             b1 = b0
         return s0
-

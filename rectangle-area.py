@@ -5,4 +5,3 @@ class Solution:
         bottom = max(B, F)
         top = max(min(D, H), bottom)
         return (C - A) * (D - B) + (G - E) * (H - F) - (right - left) * (top - bottom)
-

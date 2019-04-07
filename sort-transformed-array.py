@@ -11,4 +11,3 @@ class Solution:
                 ans.append(nums[right])
                 right -= 1
         return ans if a <= 0 else ans[::-1]
-

@@ -10,4 +10,3 @@ class Solution:
             if i1 != -1 and i2 != -1:
                 ans = min(ans, abs(i1 - i2))
         return ans
-
