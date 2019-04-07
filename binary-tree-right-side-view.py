@@ -7,19 +7,13 @@
 
 
 class Solution:
-    def rightSideView(self, root):
-        """
-        :type root: TreeNode
-        :rtype: List[int]
-        """
+    def rightSideView(self, root: TreeNode) -> List[int]:
+        if not root:
+            return []
+        ans = []
+        level = [root]
+        while level:
+            ans.append(level[-1].val)
+            level = [child for node in level for child in (node.left, node.right) if child]
+        return ans
 
-        height = collections.defaultdict(list)
-
-        def dfs(root, depth):
-            if root:
-                height[depth].append(root.val)
-                dfs(root.right, depth + 1)
-                dfs(root.left, depth + 1)
-
-        dfs(root, 0)
-        return [height[i][0] for i in range(len(height))]
