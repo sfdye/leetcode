@@ -17,6 +17,7 @@ read4(buf) # read4 returns 3. Now buf = ['i','j','k',...], fp points to end of f
 class Solution:
     def __init__(self):
         self.queue = collections.deque()
+        self.buf4 = [""] * 4
 
     def read(self, buf, n):
         """
@@ -26,12 +27,12 @@ class Solution:
         """
         i = 0
         while i < n:
-            buf4 = [""] * 4
-            k = read4(buf4)
-            self.queue.extend(buf4[:k])
+            k = read4(self.buf4)
+            self.queue.extend(self.buf4[:k])
             cur = min(len(self.queue), n - i)
             if cur == 0:
                 break
             buf[i : i + cur] = [self.queue.popleft() for _ in range(cur)]
             i += cur
         return i
+
