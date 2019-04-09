@@ -1,9 +1,5 @@
 class Solution:
-    def removeInvalidParentheses(self, s):
-        """
-        :type s: str
-        :rtype: List[str]
-        """
+    def removeInvalidParentheses(self, s: str) -> List[str]:
         left = right = 0
         for c in s:
             if c == "(":
@@ -11,26 +7,28 @@ class Solution:
             elif c == ")":
                 if left == 0:
                     right += 1
-                elif left > 0:
+                else:
                     left -= 1
-
-        self.ans = set()
 
         def dfs(depth, left, right, left_rem, right_rem, cur):
             if depth == len(s):
-                if left_rem == 0 and right_rem == 0:
+                if left == right and left_rem == right_rem == 0:
                     self.ans.add(cur)
+                    return
             else:
-                if s[depth] == "(" and left_rem > 0:
-                    dfs(depth + 1, left, right, left_rem - 1, right_rem, cur)
-                if s[depth] == ")" and right_rem > 0:
-                    dfs(depth + 1, left, right, left_rem, right_rem - 1, cur)
-                if s[depth] != "(" and s[depth] != ")":
-                    dfs(depth + 1, left, right, left_rem, right_rem, cur + s[depth])
-                elif s[depth] == "(":
+                if s[depth] == "(":
+                    if left_rem > 0:
+                        dfs(depth + 1, left, right, left_rem - 1, right_rem, cur)
                     dfs(depth + 1, left + 1, right, left_rem, right_rem, cur + "(")
-                elif s[depth] == ")" and right < left:
-                    dfs(depth + 1, left, right + 1, left_rem, right_rem, cur + ")")
+                elif s[depth] == ")":
+                    if right_rem > 0:
+                        dfs(depth + 1, left, right, left_rem, right_rem - 1, cur)
+                    if left > right:
+                        dfs(depth + 1, left, right + 1, left_rem, right_rem, cur + ")")
+                else:
+                    dfs(depth + 1, left, right, left_rem, right_rem, cur + s[depth])
 
+        self.ans = set()
         dfs(0, 0, 0, left, right, "")
         return list(self.ans)
+
