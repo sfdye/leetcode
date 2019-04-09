@@ -35,4 +35,3 @@ class Solution:
                 buf[cur] = self.queue.popleft()
                 cur += 1
         return cur
-

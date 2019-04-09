@@ -32,4 +32,3 @@ class Solution:
             buf[cur : cur + k] = self.buf4[:k]
             cur += k
         return cur
-

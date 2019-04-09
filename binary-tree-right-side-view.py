@@ -16,4 +16,3 @@ class Solution:
             ans.append(level[-1].val)
             level = [child for node in level for child in (node.left, node.right) if child]
         return ans
-
