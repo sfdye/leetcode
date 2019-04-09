@@ -25,14 +25,14 @@ class Solution:
         :type n: Number of characters to read (int)
         :rtype: The number of actual characters read (int)
         """
-        i = 0
-        while i < n:
+        cur = 0
+        while cur < n:
             k = read4(self.buf4)
             self.queue.extend(self.buf4[:k])
-            cur = min(len(self.queue), n - i)
-            if cur == 0:
+            if len(self.queue) == 0:
                 break
-            buf[i : i + cur] = [self.queue.popleft() for _ in range(cur)]
-            i += cur
-        return i
+            for _ in range(min(len(self.queue), n - cur)):
+                buf[cur] = self.queue.popleft()
+                cur += 1
+        return cur
 
