@@ -6,19 +6,16 @@
 
 
 class Solution:
-    def mergeKLists(self, lists):
-        """
-        :type lists: List[ListNode]
-        :rtype: ListNode
-        """
-        h = [(l.val, idx) for idx, l in enumerate(lists) if l]
-        heapq.heapify(h)
-        head = cur = ListNode(None)
-        while h:
-            val, idx = heapq.heappop(h)
+    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+        heap = [(li.val, i) for i, li in enumerate(lists) if li]
+        heapq.heapify(heap)
+        head = cur = ListNode(0)
+        while heap:
+            val, i = heapq.heappop(heap)
             cur.next = ListNode(val)
             cur = cur.next
-            node = lists[idx] = lists[idx].next
-            if node:
-                heapq.heappush(h, (node.val, idx))
+            lists[i] = lists[i].next
+            if lists[i]:
+                heapq.heappush(heap, (lists[i].val, i))
         return head.next
+
