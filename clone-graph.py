@@ -1,27 +1,28 @@
-# Definition for a undirected graph node
-# class UndirectedGraphNode:
-#     def __init__(self, x):
-#         self.label = x
-#         self.neighbors = []
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val, neighbors):
+        self.val = val
+        self.neighbors = neighbors
+"""
 
 
 class Solution:
-    # @param node, a undirected graph node
-    # @return a undirected graph node
-    def cloneGraph(self, node):
-        if not node:
-            return
-        queue = collections.deque([node])
-        node_copy = UndirectedGraphNode(node.label)
-        dic = {node: node_copy}
-        while queue:
-            node = queue.popleft()
-            for neighbor in node.neighbors:
-                if neighbor not in dic:
-                    neighbor_copy = UndirectedGraphNode(neighbor.label)
-                    dic[neighbor] = neighbor_copy
-                    dic[node].neighbors.append(neighbor_copy)
-                    queue.append(neighbor)
-                else:
-                    dic[node].neighbors.append(dic[neighbor])
-        return node_copy
+    def cloneGraph(self, node: "Node") -> "Node":
+        dic = {}
+
+        def dfs(node):
+            if not node:
+                return
+            else:
+                node_copy = Node(node.val, [])
+                dic[node] = node_copy
+                for nei in node.neighbors:
+                    if nei in dic:
+                        node_copy.neighbors.append(dic[nei])
+                    else:
+                        node_copy.neighbors.append(dfs(nei))
+                return node_copy
+
+        return dfs(node)
+
