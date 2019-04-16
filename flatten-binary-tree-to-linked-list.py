@@ -10,13 +10,20 @@ class Solution:
     def __init__(self):
         self.prev = None
 
-    def flatten(self, root: "TreeNode") -> "None":
+    def flatten(self, root: TreeNode) -> None:
         """
         Do not return anything, modify root in-place instead.
         """
-        if root:
-            self.flatten(root.right)
-            self.flatten(root.left)
-            root.right = self.prev
+        if not root:
+            return
+        else:
+            left = root.left
+            right = root.right
+            self.flatten(left)
+            self.flatten(right)
             root.left = None
-            self.prev = root
+            root.right = left
+            cur = root
+            while cur.right:
+                cur = cur.right
+            cur.right = right
