@@ -1,14 +1,11 @@
 class Solution:
-    def findPeakElement(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
+    def findPeakElement(self, nums: List[int]) -> int:
         lo, hi = 0, len(nums) - 1
         while lo < hi:
             mid = (lo + hi) // 2
-            if nums[mid] < nums[mid + 1]:
-                lo = mid + 1
-            else:
+            if nums[mid] > nums[mid + 1]:
                 hi = mid
+            else:
+                lo = mid + 1
         return lo
+
