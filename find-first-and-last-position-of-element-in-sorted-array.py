@@ -5,19 +5,21 @@ class Solution:
         lo, hi = 0, len(nums)
         while lo < hi:
             mid = (lo + hi) // 2
-            if target <= nums[mid]:
+            if nums[mid] >= target:
                 hi = mid
             else:
                 lo = mid + 1
-        left = lo
-        if left == len(nums) or nums[left] != target:
+        print(lo)
+        if lo == len(nums) or nums[lo] != target:
             return [-1, -1]
+        first = lo
         lo, hi = 0, len(nums)
         while lo < hi:
             mid = (lo + hi) // 2
-            if target >= nums[mid]:
-                lo = mid + 1
-            else:
+            if nums[mid] > target:
                 hi = mid
-        right = lo - 1
-        return [left, right]
+            else:
+                lo = mid + 1
+        last = hi - 1
+        return [first, last]
+
