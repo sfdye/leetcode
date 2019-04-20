@@ -5,8 +5,8 @@ class Solution:
             mid = (lo + hi) // 2
             if nums[mid] == target:
                 return mid
-            elif nums[mid] < target:
-                lo = mid + 1
-            else:
+            elif nums[mid] > target:
                 hi = mid
+            else:
+                lo = mid + 1
         return lo
