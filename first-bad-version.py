@@ -10,7 +10,7 @@ class Solution:
         :type n: int
         :rtype: int
         """
-        lo, hi = 1, n
+        lo, hi = 1, n + 1
         while lo < hi:
             mid = (lo + hi) // 2
             if isBadVersion(mid):
@@ -18,3 +18,4 @@ class Solution:
             else:
                 lo = mid + 1
         return lo
+
