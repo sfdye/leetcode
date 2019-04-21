@@ -4,15 +4,26 @@ class Solution:
         :type edges: List[List[int]]
         :rtype: List[int]
         """
-        p = list(range(1001))
 
-        def find(u):
-            if p[u] != u:
-                p[u] = find(p[u])
-            return p[u]
+        def find(x):
+            if parent[x] != x:
+                parent[x] = find(parent[x])
+            return parent[x]
 
-        for edge in edges:
-            u, v = map(find, edge)
-            if u == v:
-                return edge
-            p[u] = p[v]
+        def union(x, y):
+            x, y = find(x), find(y)
+            if x == y:
+                return False
+            if size[x] < size[y]:
+                x, y = y, x
+            parent[y] = x
+            size[x] += size[y]
+            return True
+
+        N = len(edges)
+        parent = list(range(N + 1))
+        size = [1 for _ in range(N + 1)]
+        for x, y in edges:
+            if not union(x, y):
+                return [x, y]
+
