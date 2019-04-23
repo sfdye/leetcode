@@ -18,4 +18,3 @@ class Solution:
             if lists[i]:
                 heapq.heappush(heap, (lists[i].val, i))
         return head.next
-

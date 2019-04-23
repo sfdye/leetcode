@@ -22,4 +22,3 @@ class Solution:
                 lo = mid + 1
         last = hi - 1
         return [first, last]
-

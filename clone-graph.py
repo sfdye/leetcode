@@ -25,4 +25,3 @@ class Solution:
                 return node_copy
 
         return dfs(node)
-

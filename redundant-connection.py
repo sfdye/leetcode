@@ -26,4 +26,3 @@ class Solution:
         for x, y in edges:
             if not union(x, y):
                 return [x, y]
-

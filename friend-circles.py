@@ -30,4 +30,3 @@ class Solution:
                 if M[i][j] == 1:
                     dsu.union(i, j)
         return dsu.count
-

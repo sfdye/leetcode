@@ -37,4 +37,3 @@ class Solution:
                     dsu.union(x, y)
             ans.append(dsu.count)
         return ans
-

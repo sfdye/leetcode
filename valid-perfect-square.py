@@ -10,4 +10,3 @@ class Solution:
             else:
                 lo = mid + 1
         return (lo - 1) ** 2 == num
-
