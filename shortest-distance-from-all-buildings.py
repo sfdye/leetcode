@@ -16,7 +16,6 @@ class Solution:
                         dist[nr][nc] += step + 1
                         reach[nr][nc] += 1
                         queue.append((nr, nc, step + 1))
-                step += 1
 
         cnt = 0
         for i in range(rows):
@@ -31,3 +30,4 @@ class Solution:
                 if grid[i][j] == 0 and reach[i][j] == cnt:
                     ans = min(ans, dist[i][j])
         return ans if ans < float("inf") else -1
+
