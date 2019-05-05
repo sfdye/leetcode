@@ -10,4 +10,3 @@ class Solution:
             if c == "=":
                 p[find(b)] = p[find(a)]
         return not any(find(a) == find(b) for a, c, _, b in equations if c == "!")
-

@@ -10,4 +10,3 @@ class Solution:
 
         dfs(0)
         return len(seen) == len(rooms)
-

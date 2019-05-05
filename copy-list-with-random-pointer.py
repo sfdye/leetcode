@@ -21,4 +21,3 @@ class Solution:
             dic[node].random = dic.get(node.random)
             node = node.next
         return dic.get(head)
-

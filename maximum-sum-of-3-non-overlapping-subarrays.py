@@ -26,4 +26,3 @@ class Solution:
             if not ans or w[i] + w[j] + w[k] > w[ans[0]] + w[ans[1]] + w[ans[2]]:
                 ans = i, j, k
         return ans
-

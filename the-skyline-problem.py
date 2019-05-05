@@ -11,4 +11,3 @@ class Solution:
             if ans[-1][1] != -live[0][0]:
                 ans.append([pos, -live[0][0]])
         return ans[1:]
-

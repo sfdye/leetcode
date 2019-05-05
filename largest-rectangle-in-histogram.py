@@ -10,4 +10,3 @@ class Solution:
             stack.append(i)
         heights.pop()
         return ans
-
